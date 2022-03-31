@@ -1,11 +1,17 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Home from "./pages/home";
+import Landing from "./pages/Landing";
+import About from "./pages/About";
+import Team from "./pages/Team";
+import Sponsors from "./pages/Sponsors";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Landing />
+      <About />
+      <Team />
+      <Sponsors />
     </div>
   );
 }

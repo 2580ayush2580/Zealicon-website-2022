@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+/* fonts */
+@font-face {
+    font-family: Gilroy-bold;
+    src: url("../src/assets/fonts/Gilroy-Bold.ttf");
+    font-display: swap;
+}
+@font-face {
+    font-family: Gilroy-demi;
+    src: url("../src/assets/fonts/Gilroy-SemiBold.ttf");
+    font-display: swap;
+}
+@font-face {
+    font-family: Gilroy-medium;
+    src: url("../src/assets/fonts/Gilroy-Medium.ttf");
+    font-display: swap;
+}
+@font-face {
+    font-family: Gilroy-regular;
+    src: url("../src/assets/fonts/Gilroy-Regular.ttf");
+    font-display: swap;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.font-bold {
+    margin: 0;
+    font-family: Gilroy-bold !important;
+}
+.font-demi {
+    margin: 0;
+    font-family: Gilroy-demi;
+}
+.font-medium {
+    margin: 0;
+    font-family: Gilroy-medium;
+}
+.font-regular {
+    margin: 0;
+    font-family: Gilroy-regular;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* font size */
+.font-12{
+    font-size: 12px;
+}
+.font-14{
+    font-size: 14px;
+}
+.font-16{
+    font-size: 16px;
+}
+.font-18{
+    font-size: 18px;
+}
+.font-20{
+    font-size: 20px;
+}
+.font-24{
+    font-size: 24px;
+}
+.font-28{
+    font-size: 28px;
+}
+.font-36{
+    font-size: 36px;
+}
+.font-48{
+    font-size: 48px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* css */
+html,
+body {
+  font-size: 100%;
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
 }
 
-.App-link {
-  color: #61dafb;
+:root{
+    --primaryColor: 163D5B
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.primaryColor{
+    color: var(--primaryColor);
+}
+
+.fullscreen{
+    min-height: 100vh;
+}
+
+.about{
+    background: url("../src/assets/images/about-bg.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
 }
