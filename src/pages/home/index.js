@@ -10,6 +10,13 @@ const Home = () => {
           src={BackgrounImage}
           alt="Zealicon"
         />
+        <div className="mainShowcase-heading">
+          <span className="mainShowcase-heading-welcome-color">welcome to</span>{" "}
+          Zealicon
+        </div>
+        <div className="mainShowcase-button-wrapper">
+          <div className="mainShowcase-button">REGISTER NOW</div>
+        </div>
       </div>
     </div>
   );
