@@ -1,0 +1,20 @@
+.mainShowcase {
+  height: 1024px;
+  width: 1440px;
+  margin: auto;
+}
+.mainShowcase-wrapper {
+  background: linear-gradient(
+    #362865,
+    #362865,
+    #362865,
+    #362865,
+    #362865,
+    #4c3682,
+    #5e54c7
+  );
+}
+.mainShowcase-image {
+  height: 1024px;
+  width: 1440px;
+}
