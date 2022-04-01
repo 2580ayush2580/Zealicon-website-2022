@@ -5,17 +5,45 @@ import ZealiconLogo from "../../assets/image/zealicon-logo.svg";
 import "./style.css";
 const Home = () => {
   return (
-    <div className="mainShowcase-wrapper">
+    <div id="home" className="mainShowcase-wrapper">
       <div className="homeNavbar">
         <ul className="homeNavbarItem font-demi">
           <li>
-            <img className="ZealiconLogo" src={ZealiconLogo} alt="Zealicon" />
+            <button className="btn">
+              <a className="navbarBtn" href="/#home">
+                <img
+                  className="ZealiconLogo"
+                  src={ZealiconLogo}
+                  alt="Zealicon"
+                />
+              </a>
+            </button>
           </li>
-          <li>Events</li>
-          <li>About</li>
-          <li>Team</li>
-          <li>Reach</li>
-          <li>Sponsor</li>
+          {/* <li>
+            <button className="btn navbarBtn">Events</button>
+          </li> */}
+          <li>
+            <button className="btn">
+              <a className="navbarBtn" href="/#about">
+                About
+              </a>
+            </button>
+          </li>
+          <li>
+            <button className="btn">
+              <a className="navbarBtn" href="/#team">
+                Team
+              </a>
+            </button>
+          </li>
+          {/* <li>Reach</li> */}
+          <li>
+            <button className="btn">
+              <a className="navbarBtn" href="/#sponsor">
+                Sponsor
+              </a>
+            </button>
+          </li>
           <li>
             <button className="btn navbar-btn">Sign in</button>
           </li>

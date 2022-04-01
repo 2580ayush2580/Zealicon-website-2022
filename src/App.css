@@ -204,3 +204,7 @@ body {
         padding: 60px;
     }
 } */
+.navbarBtn {
+  text-decoration: none;
+  color: #ffffff !important;
+}
