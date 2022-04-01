@@ -47,7 +47,7 @@ const Home = () => {
               </a>
             </button>
           </li>
-          <Link to='login'>
+          <Link to='/login'>
             <button className="btn navbar-btn">Sign in</button>
           </Link>
         </ul>
