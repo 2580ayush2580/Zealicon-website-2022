@@ -20,9 +20,9 @@ const Home = () => {
               </a>
             </button>
           </li>
-          <li>
+          <Link to='events'>
             <button className="btn navbarBtn">Events</button>
-          </li>
+          </Link>
           <li>
             <button className="btn">
               <a className="navbarBtn" href="/#about">
@@ -37,7 +37,9 @@ const Home = () => {
               </a>
             </button>
           </li>
-          <li>Reach</li>
+          <Link to='reach'>
+            <button className="btn navbarBtn">Reach</button>
+          </Link>
           <li>
             <button className="btn">
               <a className="navbarBtn" href="/#sponsor">
@@ -45,9 +47,9 @@ const Home = () => {
               </a>
             </button>
           </li>
-          <li>
+          <Link to='login'>
             <button className="btn navbar-btn">Sign in</button>
-          </li>
+          </Link>
         </ul>
       </div>
       <div className="mainShowcase">

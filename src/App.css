@@ -104,6 +104,12 @@ body {
     background-color: var(--teamColor5);
 }
 
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .text-primaryColor {
   color: var(--primaryColor);
 }
@@ -189,6 +195,11 @@ body {
   }
 }
 
+.event-box{
+  width: 200px ;
+  height: 200px ;
+  border-radius: 16px;
+}
 
 .box {
   width: 142px !important;

@@ -65,8 +65,10 @@
   width: 108px;
 }
 .navbar-btn {
-  background-color: #7f3cb4 !important;
-  color: #ffffff;
+  /* background-color: #7f3cb4 ; */
+  background: rgba(127, 60, 180, 0.28);
+border: 1px solid rgba(51, 17, 101, 0.52);
+  color: #ffffff !important;
 }
 .homeNavbarItem li {
   padding: 10px;
