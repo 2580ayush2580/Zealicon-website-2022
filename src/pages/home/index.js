@@ -1,6 +1,7 @@
 import React from "react";
 import BackgrounImage from "../../assets/image/Background.png";
 import ZealiconLogo from "../../assets/image/zealicon-logo.svg";
+import { Link } from "react-router-dom";
 
 import "./style.css";
 const Home = () => {
@@ -19,9 +20,9 @@ const Home = () => {
               </a>
             </button>
           </li>
-          {/* <li>
+          <li>
             <button className="btn navbarBtn">Events</button>
-          </li> */}
+          </li>
           <li>
             <button className="btn">
               <a className="navbarBtn" href="/#about">
@@ -36,7 +37,7 @@ const Home = () => {
               </a>
             </button>
           </li>
-          {/* <li>Reach</li> */}
+          <li>Reach</li>
           <li>
             <button className="btn">
               <a className="navbarBtn" href="/#sponsor">
@@ -55,15 +56,19 @@ const Home = () => {
           src={BackgrounImage}
           alt="Zealicon"
         /> */}
-        <div className="mainShowcase-heading font-bold">
+        <div className="mainShowcase-heading">
           <span className="mainShowcase-heading-welcome-color font-demi">
             welcome to
           </span>{" "}
-          Zealicon
+          <span className="font-bold">Zealicon</span>
         </div>
+        <Link to='/register'>
         <div className="mainShowcase-button-wrapper">
-          <div className="mainShowcase-button font-bold">REGISTER NOW</div>
-        </div>
+          <div className="mainShowcase-button font-bold text-white">
+           REGISTER NOW
+          </div>
+        </div></Link>
+
       </div>
     </div>
   );
