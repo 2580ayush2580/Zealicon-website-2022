@@ -4,19 +4,13 @@
   margin: auto;
 }
 .mainShowcase-wrapper {
-  background: linear-gradient(
-    #362865,
-    #362865,
-    #362865,
-    #362865,
-    #362865,
-    #4c3682,
-    #5e54c7
-  );
+  height: 1024px;
+  background: url("../../assets/image/Background.png") no-repeat center
+    center/cover;
 }
 .mainShowcase-image {
-  height: 1024px;
-  width: 1440px;
+  height: 100%;
+  width: 100%;
 }
 .mainShowcase-heading {
   position: absolute;
@@ -52,4 +46,58 @@
   position: absolute;
   top: 326px;
   left: 0;
+}
+.homeNavbar {
+  height: 128px;
+  padding: 10px;
+  max-width: 80%;
+  margin: auto;
+}
+.homeNavbarItem {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+.ZealiconLogo {
+  height: 94px;
+  width: 108px;
+}
+.navbar-btn {
+  background-color: #7f3cb4 !important;
+  color: #ffffff;
+}
+.homeNavbarItem li {
+  padding: 10px;
+  margin: 10px;
+}
+
+@media only screen and (max-width: 1350px) {
+  .homeNavbar {
+    max-width: 90%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .homeNavbar {
+    max-width: 100%;
+  }
+  .mainShowcase-heading {
+    font-size: 48px;
+  }
+  .mainShowcase-button {
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+  }
+  .mainShowcase-button-wrapper {
+    top: 280px;
+  }
+  .mainShowcase-wrapper {
+    height: 880px;
+  }
+  .mainShowcase-heading {
+    top: 180px;
+  }
 }

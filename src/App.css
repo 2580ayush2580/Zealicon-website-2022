@@ -1,75 +1,74 @@
 /* fonts */
 @font-face {
-    font-family: Gilroy-bold;
-    src: url("../src/assets/fonts/Gilroy-Bold.ttf");
-    font-display: swap;
+  font-family: Gilroy-bold;
+  src: url("../src/assets/fonts/Gilroy-Bold.ttf");
+  font-display: swap;
 }
 @font-face {
-    font-family: Gilroy-demi;
-    src: url("../src/assets/fonts/Gilroy-SemiBold.ttf");
-    font-display: swap;
+  font-family: Gilroy-demi;
+  src: url("../src/assets/fonts/Gilroy-SemiBold.ttf");
+  font-display: swap;
 }
 @font-face {
-    font-family: Gilroy-medium;
-    src: url("../src/assets/fonts/Gilroy-Medium.ttf");
-    font-display: swap;
+  font-family: Gilroy-medium;
+  src: url("../src/assets/fonts/Gilroy-Medium.ttf");
+  font-display: swap;
 }
 @font-face {
-    font-family: Gilroy-regular;
-    src: url("../src/assets/fonts/Gilroy-Regular.ttf");
-    font-display: swap;
-
+  font-family: Gilroy-regular;
+  src: url("../src/assets/fonts/Gilroy-Regular.ttf");
+  font-display: swap;
 }
 
 .font-bold {
-    margin: 0;
-    font-family: Gilroy-bold !important;
+  margin: 0;
+  font-family: Gilroy-bold !important;
 }
 .font-demi {
-    margin: 0;
-    font-family: Gilroy-demi;
+  margin: 0;
+  font-family: Gilroy-demi;
 }
 .font-medium {
-    margin: 0;
-    font-family: Gilroy-medium;
+  margin: 0;
+  font-family: Gilroy-medium;
 }
 .font-regular {
-    margin: 0;
-    font-family: Gilroy-regular;
+  margin: 0;
+  font-family: Gilroy-regular;
 }
 
 /* font size */
-.font-12{
-    font-size: 12px;
+.font-12 {
+  font-size: 12px;
 }
-.font-14{
-    font-size: 14px;
+.font-14 {
+  font-size: 14px;
 }
-.font-16{
-    font-size: 16px;
+.font-16 {
+  font-size: 16px;
 }
-.font-18{
-    font-size: 18px;
+.font-18 {
+  font-size: 18px;
 }
-.font-20{
-    font-size: 20px;
+.font-20 {
+  font-size: 20px;
 }
-.font-24{
-    font-size: 24px;
+.font-24 {
+  font-size: 24px;
 }
-.font-28{
-    font-size: 28px;
+.font-28 {
+  font-size: 28px;
 }
-.font-36{
-    font-size: 36px;
+.font-36 {
+  font-size: 36px;
 }
-.font-48{
-    font-size: 48px;
+.font-48 {
+  font-size: 48px;
 }
 
 /* padding */
-.p-100{
-    padding: 100px;
+.p-100 {
+  padding: 100px;
 }
 
 /* css */
@@ -80,14 +79,13 @@ body {
   scroll-behavior: smooth;
 }
 
-:root{
-    --primaryColor: #163D5B;
-    /* --teamColor1: #3D4FF6;
+:root {
+  --primaryColor: #163d5b;
+  /* --teamColor1: #3D4FF6;
     --teamColor2: #5AD6F9;
     --teamColor3: #8136CB;
     --teamColor4: #75B742;
     --teamColor5: #FC952E; */
-    
 }
 
 /* .bg-1{
@@ -106,92 +104,96 @@ body {
     background-color: var(--teamColor5);
 } */
 
-.text-primaryColor{
-    color: var(--primaryColor) ;
+.text-primaryColor {
+  color: var(--primaryColor);
 }
 
-.text-secondaryColor{
-    background: linear-gradient(180deg, rgba(33, 11, 12, 0) -35.09%, #210B0C 72.27%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.text-secondaryColor {
+  background: linear-gradient(
+    180deg,
+    rgba(33, 11, 12, 0) -35.09%,
+    #210b0c 72.27%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.justify{
-    text-align: justify;
+.justify {
+  text-align: justify;
 }
 
-.fullscreen{
-    min-height: 100vh;
+.fullscreen {
+  min-height: 100vh;
 }
 
-.team-member{
-    border-radius: 48px;
-    width: 191px;
-    height: 191px;
+.team-member {
+  border-radius: 48px;
+  width: 191px;
+  height: 191px;
 }
 
-.about{
-    background: url("../src/assets/bg/about-bg.svg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    width: 100vw;
+.about {
+  background: url("../src/assets/bg/about-bg.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
 }
 
-.team{
-    background: url("../src/assets/bg/team-bg.svg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    width: 100vw;
+.team {
+  background: url("../src/assets/bg/team-bg.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
 }
 
-.sponsor{
-    background: url("../src/assets/bg/sponsor-bg.svg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    width: 100vw;
+.sponsor {
+  background: url("../src/assets/bg/sponsor-bg.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
 }
 
-.box{
-    width: 142px !important;
-    height: 142px !important;
-    background-color: #210B0C !important;
-    border-radius: 13.47px;
+.box {
+  width: 142px !important;
+  height: 142px !important;
+  background-color: #210b0c !important;
+  border-radius: 13.47px;
 }
 
-.team-row{
-    margin-top: 40px !important;
+.team-row {
+  margin-top: 40px !important;
 }
 
-.sponsor-row{
-    margin-top: 40px !important;
+.sponsor-row {
+  margin-top: 40px !important;
 }
 
 @media screen and (max-width: 1024px) {
-    .team-row{
-        margin-top: 0px;
-    }
-    .sponsor-row{
-        margin-top: 0px !important;
-    }
+  .team-row {
+    margin-top: 0px;
+  }
+  .sponsor-row {
+    margin-top: 0px !important;
+  }
 }
 
 @media screen and (max-width: 772px) {
-    .font-36{
-        font-size: 32px;
-    }
-    .font-18{
-        font-size: 16px;
-    }
-    .p-100{
-        padding: 75px;
-    }
+  .font-36 {
+    font-size: 32px;
+  }
+  .font-18 {
+    font-size: 16px;
+  }
+  .p-100 {
+    padding: 75px;
+  }
 }
 
 /* @media screen and (max-width: 500px) {
