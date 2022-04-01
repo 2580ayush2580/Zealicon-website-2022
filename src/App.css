@@ -82,15 +82,15 @@ body {
 
 :root{
     --primaryColor: #163D5B;
-    --teamColor1: #3D4FF6;
+    /* --teamColor1: #3D4FF6;
     --teamColor2: #5AD6F9;
     --teamColor3: #8136CB;
     --teamColor4: #75B742;
-    --teamColor5: #FC952E;
+    --teamColor5: #FC952E; */
     
 }
 
-.bg-1{
+/* .bg-1{
     background-color: var(--teamColor1);
 }
 .bg-2{
@@ -104,10 +104,17 @@ body {
 }
 .bg-5{
     background-color: var(--teamColor5);
-}
+} */
 
 .text-primaryColor{
     color: var(--primaryColor) ;
+}
+
+.text-secondaryColor{
+    background: linear-gradient(180deg, rgba(33, 11, 12, 0) -35.09%, #210B0C 72.27%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .justify{
@@ -120,8 +127,9 @@ body {
 
 .team-member{
     border-radius: 48px;
+    width: 191px;
+    height: 191px;
 }
-
 
 .about{
     background: url("../src/assets/bg/about-bg.svg");
@@ -150,13 +158,27 @@ body {
     width: 100vw;
 }
 
+.box{
+    width: 142px !important;
+    height: 142px !important;
+    background-color: #210B0C !important;
+    border-radius: 13.47px;
+}
+
 .team-row{
+    margin-top: 40px !important;
+}
+
+.sponsor-row{
     margin-top: 40px !important;
 }
 
 @media screen and (max-width: 1024px) {
     .team-row{
         margin-top: 0px;
+    }
+    .sponsor-row{
+        margin-top: 0px !important;
     }
 }
 
