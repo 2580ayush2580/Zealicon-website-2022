@@ -1,5 +1,5 @@
 import React from "react";
-import BackgrounImage from "../../assets/image/Background.png";
+import BackgrounImage from "../../assets/image/background.gif";
 import ZealiconLogo from "../../assets/image/zealicon-logo.svg";
 
 import "./style.css";

@@ -5,7 +5,7 @@
 }
 .mainShowcase-wrapper {
   height: 1024px;
-  background: url("../../assets/image/Background.png") no-repeat center
+  background: url("../../assets/image/background1.gif") no-repeat center
     center/cover;
 }
 .mainShowcase-image {
