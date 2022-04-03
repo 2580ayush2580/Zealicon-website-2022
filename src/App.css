@@ -59,6 +59,9 @@
 .font-28 {
   font-size: 28px;
 }
+.font-30{
+  font-size: 30px;
+}
 .font-36 {
   font-size: 36px;
 }
@@ -81,14 +84,15 @@ body {
 
 :root {
   --primaryColor: #163d5b;
-  /* --teamColor1: #3D4FF6;
-    --teamColor2: #5AD6F9;
-    --teamColor3: #8136CB;
-    --teamColor4: #75B742;
-    --teamColor5: #FC952E; */
+  --teamColor1: #3D4FF6;
+  --teamColor2: #5AD6F9;
+  --teamColor3: #8136CB;
+  --teamColor4: #75B742;
+  --teamColor5: #FC952E;
+  --labelColor: #BAB7BD;
 }
 
-/* .bg-1{
+.bg-1{
     background-color: var(--teamColor1);
 }
 .bg-2{
@@ -102,7 +106,13 @@ body {
 }
 .bg-5{
     background-color: var(--teamColor5);
-} */
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .text-primaryColor {
   color: var(--primaryColor);
@@ -119,6 +129,41 @@ body {
   background-clip: text;
 }
 
+.text-labelColor{
+  color: var(--labelColor);
+}
+
+.form-bg{
+  background-color: #250C3A;
+  padding: 32px;
+  width: 412px;
+  box-shadow: 0px 4px 6px rgba(28, 28, 28, 0.06);
+  border-radius: 16px;
+}
+
+.input-container{
+  width: 100%;
+  height: 50px;
+  padding: 18px 20px;
+  border-radius: 5px;
+  border: 1px solid #7139A4;
+  background-color: #250C3A;
+  outline: none ;
+}
+
+.input-btn{
+  background: url("../src/assets/image/button-bg.png") no-repeat center
+  center/cover;
+  width: 257px;
+  height: 61px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  outline: none;
+  border: transparent;
+}
+
 .justify {
   text-align: justify;
 }
@@ -131,6 +176,24 @@ body {
   border-radius: 48px;
   width: 191px;
   height: 191px;
+}
+
+.default{
+  background: url("../src/assets/bg/default-bg.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.login, .register {
+  background: url("../src/assets/bg/login-bg.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
 }
 
 .about {
@@ -158,6 +221,23 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh;
   width: 100vw;
+}
+
+@media screen and (max-width: 1024px) {
+  .sponsor {
+    background: url("../src/assets/bg/sponsor-bg-s.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100vw;
+  }
+}
+
+.event-box{
+  width: 200px ;
+  height: 200px ;
+  border-radius: 16px;
 }
 
 .box {

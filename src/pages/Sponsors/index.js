@@ -19,26 +19,20 @@ export default function Sponsors() {
       <div className="font-bold text-secondaryColor font-36 text-center">
         SPONSORS
       </div>
-      <div className="mt-5 px-5 container">
-        <div className="row row-cols-lg-6 row-cols-md-6 d-flex justify-content-around row-cols-3 gy-4">
+      <div className="my-5 px-5 container">
+        <div className="row gy-4">
           <SponsorItem img={Sponsor1} />
           <SponsorItem img={Sponsor2} />
           <SponsorItem img={Sponsor3} />
           <SponsorItem img={Sponsor4} />
           <SponsorItem img={Sponsor5} />
           <SponsorItem img={Sponsor6} />
-        </div>
-
-        <div className="row row-cols-lg-6 d-flex justify-content-around row-cols-2 gy-4 sponsor-row">
           <SponsorItem img={Sponsor7} />
           <SponsorItem img={Sponsor8} />
           <SponsorItem img={Sponsor9} />
           <SponsorItem img={Sponsor10} />
           <SponsorItem img={Sponsor11} />
           <SponsorItem img={Sponsor12} />
-        </div>
-
-        <div className="row row-cols-lg-6 d-flex justify-content-around row-cols-2 gy-4 sponsor-row">
           <SponsorItem img={Sponsor1} />
           <SponsorItem img={Sponsor2} />
           <SponsorItem img={Sponsor3} />
