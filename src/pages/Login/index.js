@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Login() {
     const [user, setUser] = useState({
@@ -25,10 +26,15 @@ export default function Login() {
           <form onSubmit={handleSubmit}>
                 <div className='d-flex flex-column'>
                     <div className='font-regular font-16 text-labelColor mt-5'>Email</div>
-                    <input onChange={handleChange} name='email' className='input-container font-regular font-14 text-white mt-1' type={'email'} placeholder={'asd'} />
+                    <input onChange={handleChange} name='email' className='input-container font-regular font-14 text-white mt-1' type={'email'} placeholder={'John.snow@gmail.com'} />
                 </div>
                 <div className='d-flex flex-column'>
+                    <div className='d-flex justify-content-between align-items-baseline'>
                     <div className='font-regular font-16 text-labelColor mt-4'>Password</div>
+                        <Link to='/forgot-password' className='text-decoration-none'>
+                            <div className='font-demi font-16 text-formColor'>Forgot Password ?</div>
+                        </Link>
+                    </div>
                     <input onChange={handleChange} name='password' className='input-container font-regular font-14 text-white mt-1' type={'password'} placeholder="Password.." />
                 </div>
                 <div className='d-flex justify-content-center'>

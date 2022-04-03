@@ -73,6 +73,9 @@
 .p-100 {
   padding: 100px;
 }
+.p-75{
+  padding: 75px;
+}
 
 /* css */
 html,
@@ -84,6 +87,8 @@ body {
 
 :root {
   --primaryColor: #163d5b;
+  --formColor: #B15CD5;
+  --policyColor: #ECD1FF;
   --teamColor1: #3D4FF6;
   --teamColor2: #5AD6F9;
   --teamColor3: #8136CB;
@@ -133,6 +138,14 @@ body {
   color: var(--labelColor);
 }
 
+.text-formColor{
+  color: var(--formColor);
+}
+
+.text-policyColor{
+  color: var(--policyColor)
+}
+
 .form-bg{
   background-color: #250C3A;
   padding: 32px;
@@ -174,12 +187,21 @@ body {
 
 .team-member {
   border-radius: 48px;
-  width: 191px;
-  height: 191px;
+  /* width: 291px;
+  height: 291px; */
 }
 
 .default{
   background: url("../src/assets/bg/default-bg.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.policy{
+  background: url("../src/assets/bg/terms-bg.svg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

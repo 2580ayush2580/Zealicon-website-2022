@@ -1,10 +1,16 @@
 import React from "react";
 import { Routes as Router, Route, Navigate } from "react-router-dom";
 import App from "./App";
+import ContactUs from "./pages/Contact";
 import Events from "./pages/Events";
+import ForgotPassword from "./pages/ForgotPassword";
 import Login from "./pages/Login";
+import Privacy from "./pages/Privacy";
 import Reach from "./pages/Reach";
+import Refund from "./pages/Refund";
+import ResetPassword from "./pages/ResetPassword";
 import Signup from "./pages/Signup";
+import Terms from "./pages/T&C";
 
 const Routes = () => {
   return (
@@ -53,6 +59,60 @@ const Routes = () => {
         element={
           <React.Suspense fallback={<div>Loading....</div>}>
             <Reach />
+          </React.Suspense>
+        }
+      />
+      <Route
+        exact
+        path="/forgot-password"
+        element={
+          <React.Suspense fallback={<div>Loading....</div>}>
+            <ForgotPassword />
+          </React.Suspense>
+        }
+      />
+      <Route
+        exact
+        path="/reset-password"
+        element={
+          <React.Suspense fallback={<div>Loading....</div>}>
+            <ResetPassword />
+          </React.Suspense>
+        }
+      />
+      <Route
+        exact
+        path="/privacy"
+        element={
+          <React.Suspense fallback={<div>Loading....</div>}>
+            <Privacy />
+          </React.Suspense>
+        }
+      />
+      <Route
+        exact
+        path="/refund"
+        element={
+          <React.Suspense fallback={<div>Loading....</div>}>
+            <Refund />
+          </React.Suspense>
+        }
+      />
+      <Route
+        exact
+        path="/terms"
+        element={
+          <React.Suspense fallback={<div>Loading....</div>}>
+            <Terms />
+          </React.Suspense>
+        }
+      />
+      <Route
+        exact
+        path="/contact-us"
+        element={
+          <React.Suspense fallback={<div>Loading....</div>}>
+            <ContactUs />
           </React.Suspense>
         }
       />
