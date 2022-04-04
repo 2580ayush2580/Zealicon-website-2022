@@ -59,7 +59,7 @@
 .font-28 {
   font-size: 28px;
 }
-.font-30{
+.font-30 {
   font-size: 30px;
 }
 .font-36 {
@@ -73,7 +73,7 @@
 .p-100 {
   padding: 100px;
 }
-.p-75{
+.p-75 {
   padding: 75px;
 }
 
@@ -87,33 +87,33 @@ body {
 
 :root {
   --primaryColor: #163d5b;
-  --formColor: #B15CD5;
-  --policyColor: #ECD1FF;
-  --teamColor1: #3D4FF6;
-  --teamColor2: #5AD6F9;
-  --teamColor3: #8136CB;
-  --teamColor4: #75B742;
-  --teamColor5: #FC952E;
-  --labelColor: #BAB7BD;
+  --formColor: #b15cd5;
+  --policyColor: #ecd1ff;
+  --teamColor1: #3d4ff6;
+  --teamColor2: #5ad6f9;
+  --teamColor3: #8136cb;
+  --teamColor4: #75b742;
+  --teamColor5: #fc952e;
+  --labelColor: #bab7bd;
 }
 
-.bg-1{
-    background-color: var(--teamColor1);
+.bg-1 {
+  background-color: var(--teamColor1);
 }
-.bg-2{
-    background-color: var(--teamColor2);
+.bg-2 {
+  background-color: var(--teamColor2);
 }
-.bg-3{
-    background-color: var(--teamColor3);
+.bg-3 {
+  background-color: var(--teamColor3);
 }
-.bg-4{
-    background-color: var(--teamColor4);
+.bg-4 {
+  background-color: var(--teamColor4);
 }
-.bg-5{
-    background-color: var(--teamColor5);
+.bg-5 {
+  background-color: var(--teamColor5);
 }
 
-.center{
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,39 +134,46 @@ body {
   background-clip: text;
 }
 
-.text-labelColor{
+.text-reachColor {
+  background: linear-gradient(180deg, #539836 100% #0f270b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-labelColor {
   color: var(--labelColor);
 }
 
-.text-formColor{
+.text-formColor {
   color: var(--formColor);
 }
 
-.text-policyColor{
-  color: var(--policyColor)
+.text-policyColor {
+  color: var(--policyColor);
 }
 
-.form-bg{
-  background-color: #250C3A;
+.form-bg {
+  background-color: #250c3a;
   padding: 32px;
   width: 412px;
   box-shadow: 0px 4px 6px rgba(28, 28, 28, 0.06);
   border-radius: 16px;
 }
 
-.input-container{
+.input-container {
   width: 100%;
   height: 50px;
   padding: 18px 20px;
   border-radius: 5px;
-  border: 1px solid #7139A4;
-  background-color: #250C3A;
-  outline: none ;
+  border: 1px solid #7139a4;
+  background-color: #250c3a;
+  outline: none;
 }
 
-.input-btn{
+.input-btn {
   background: url("../src/assets/image/button-bg.png") no-repeat center
-  center/cover;
+    center/cover;
   width: 257px;
   height: 61px;
   display: flex;
@@ -191,7 +198,7 @@ body {
   height: 291px; */
 }
 
-.default{
+.default {
   background: url("../src/assets/bg/default-bg.svg");
   background-position: center;
   background-size: cover;
@@ -200,7 +207,7 @@ body {
   width: 100vw;
 }
 
-.policy{
+.policy {
   background: url("../src/assets/bg/terms-bg.svg");
   background-position: center;
   background-size: cover;
@@ -209,7 +216,8 @@ body {
   width: 100vw;
 }
 
-.login, .register {
+.login,
+.register {
   background: url("../src/assets/bg/login-bg.svg");
   background-position: center;
   background-size: cover;
@@ -256,9 +264,9 @@ body {
   }
 }
 
-.event-box{
-  width: 200px ;
-  height: 200px ;
+.event-box {
+  width: 200px;
+  height: 200px;
   border-radius: 16px;
 }
 

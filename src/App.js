@@ -4,6 +4,9 @@ import Landing from "./pages/Landing";
 import About from "./pages/About";
 import Team from "./pages/Team";
 import Sponsors from "./pages/Sponsors";
+import Reach from "./pages/Reach";
+import ScrollButton from "./components/scroll-to-top";
+import { Content, Heading } from "./components/scroll-to-top/style.jsx";
 
 function App() {
   return (
@@ -12,6 +15,9 @@ function App() {
       <About />
       <Team />
       <Sponsors />
+      <Reach />
+      <Content />
+      <ScrollButton />
     </div>
   );
 }

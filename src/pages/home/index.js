@@ -20,34 +20,30 @@ const Home = () => {
               </a>
             </button>
           </li>
-          <Link to='events'>
+          <Link to="events">
             <button className="btn navbarBtn">Events</button>
           </Link>
           <li>
-            <button className="btn">
-              <a className="navbarBtn" href="/#about">
-                About
-              </a>
-            </button>
+            <a className="navbarBtn" href="/#about">
+              <button className="btn navbarBtn">About</button>
+            </a>
           </li>
           <li>
-            <button className="btn">
-              <a className="navbarBtn" href="/#team">
-                Team
-              </a>
-            </button>
+            <a className="navbarBtn" href="/#team">
+              <button className="btn navbarBtn">Team</button>
+            </a>
           </li>
-          <Link to='reach'>
-            <button className="btn navbarBtn">Reach</button>
-          </Link>
           <li>
-            <button className="btn">
-              <a className="navbarBtn" href="/#sponsor">
-                Sponsor
-              </a>
-            </button>
+            <a className="navbarBtn" href="/#sponsor">
+              <button className="btn navbarBtn">Sponsor</button>
+            </a>
           </li>
-          <Link to='/login'>
+          <li>
+            <a className="navbarBtn" href="/#reach">
+              <button className="btn navbarBtn">Reach</button>
+            </a>
+          </li>
+          <Link to="/login">
             <button className="btn navbar-btn">Sign in</button>
           </Link>
         </ul>
@@ -64,13 +60,13 @@ const Home = () => {
           </span>{" "}
           <span className="font-bold">Zealicon</span>
         </div>
-        <Link to='/register'>
-        <div className="mainShowcase-button-wrapper">
-          <div className="mainShowcase-button font-bold text-white">
-           REGISTER NOW
+        <Link to="/register">
+          <div className="mainShowcase-button-wrapper">
+            <div className="mainShowcase-button font-bold text-white">
+              REGISTER NOW
+            </div>
           </div>
-        </div></Link>
-
+        </Link>
       </div>
     </div>
   );
