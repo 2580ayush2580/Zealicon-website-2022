@@ -4,7 +4,7 @@
   margin: auto;
 }
 .mainShowcase-wrapper {
-  height: 1024px;
+  height: 100vh;
   background: url("../../assets/image/background1.gif") no-repeat center
     center/cover;
 }
@@ -67,7 +67,7 @@
 .navbar-btn {
   /* background-color: #7f3cb4 ; */
   background: rgba(127, 60, 180, 0.28);
-border: 1px solid rgba(51, 17, 101, 0.52);
+  border: 1px solid rgba(51, 17, 101, 0.52);
   color: #ffffff !important;
 }
 .homeNavbarItem li {
