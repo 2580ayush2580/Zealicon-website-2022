@@ -73,13 +73,13 @@ const Home = () => {
           </span>{" "}
           <span className="font-bold">Zealicon</span>
         </div>
-        <Link to="/register">
-          <div className="mainShowcase-button-wrapper">
+        <div className="mainShowcase-button-wrapper">
+          <Link to="/register">
             <div className="mainShowcase-button font-bold text-white">
               REGISTER NOW
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     </div>
   );
