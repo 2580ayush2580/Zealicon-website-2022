@@ -74,7 +74,7 @@ const Home = () => {
           <span className="font-bold">Zealicon</span>
         </div>
         <div className="mainShowcase-button-wrapper">
-          <Link to="/register">
+          <Link to="/register" className="text-decoration-none">
             <div className="mainShowcase-button font-bold text-white">
               REGISTER NOW
             </div>
