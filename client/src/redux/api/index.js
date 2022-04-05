@@ -21,3 +21,33 @@ export const login = (data) =>
       "Content-Type": `multipart/form-data`,
     },
   });
+
+export const generateOrder = async () => {
+  const { data } = await axios({
+    method: "GET",
+    url: `${url}/payment/`,
+    headers: {
+      "Content-Type": `application/json`,
+      Authorization: `Bearer ${localStorage.getItem("jwt-token")}`,
+    }
+  })
+
+
+  return data;
+}
+
+export const makePayment = async (formData) => {
+  try {
+    const { data } = await axios.post("/payment/", formData, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("jwt-token")}`,
+      },
+    });
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error)
+    return error.response.data;
+  }
+}
