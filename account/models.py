@@ -52,11 +52,9 @@ class User(AbstractUser):
     branch = models.CharField(max_length=64)
     college = models.CharField(max_length=128)
     contact_no = models.CharField(max_length=10, validators=[validate_contact_number])
-    avatar = models.SmallIntegerField()
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = [
-        "avatar",
         "admission_no",
         "year",
         "branch",

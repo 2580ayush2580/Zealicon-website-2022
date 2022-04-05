@@ -7,6 +7,7 @@ import Sponsors from "./pages/Sponsors";
 import Reach from "./pages/Reach";
 import ScrollButton from "./components/scroll-to-top";
 import { Content, Heading } from "./components/scroll-to-top/style.jsx";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Team />
       <Sponsors />
       <Reach />
+      <Footer />
       <Content />
       <ScrollButton />
     </div>

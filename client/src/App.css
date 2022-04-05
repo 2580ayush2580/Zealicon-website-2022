@@ -87,6 +87,7 @@ body {
 
 :root {
   --primaryColor: #163d5b;
+  --footer-bg: #1F0851;
   --formColor: #b15cd5;
   --policyColor: #ecd1ff;
   --teamColor1: #3d4ff6;
@@ -95,6 +96,10 @@ body {
   --teamColor4: #75b742;
   --teamColor5: #fc952e;
   --labelColor: #bab7bd;
+}
+
+.footer-bg{
+  background-color: var(--footer-bg);
 }
 
 .bg-1 {
