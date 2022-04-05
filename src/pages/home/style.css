@@ -5,8 +5,6 @@
 }
 .mainShowcase-wrapper {
   height: 100vh;
-  background: url("../../assets/image/background1.gif") no-repeat center
-    center/cover;
 }
 .mainShowcase-image {
   height: 100%;
@@ -22,6 +20,12 @@
   font-style: Mixed;
   font-size: 68.56px;
   line-height: 100%;
+}
+.home-lottie-animation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
 }
 
 .mainShowcase-heading-welcome-color {
@@ -48,10 +52,12 @@
   left: 0;
 }
 .homeNavbar {
+  position: relative;
   height: 128px;
   padding: 10px;
   max-width: 80%;
   margin: auto;
+  z-index: 9999999999999999999;
 }
 .homeNavbarItem {
   height: 100%;

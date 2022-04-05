@@ -2,9 +2,19 @@ import React from "react";
 import BackgrounImage from "../../assets/image/background.gif";
 import ZealiconLogo from "../../assets/image/zealicon-logo.svg";
 import { Link } from "react-router-dom";
+import Lottie from "react-lottie";
+import animationData from "./bg.json";
 
 import "./style.css";
 const Home = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   return (
     <div id="home" className="mainShowcase-wrapper">
       <div className="homeNavbar">
@@ -54,6 +64,9 @@ const Home = () => {
           src={BackgrounImage}
           alt="Zealicon"
         /> */}
+        <div className="home-lottie-animation">
+          <Lottie options={defaultOptions} height={"100vh"} width={"100%"} />
+        </div>
         <div className="mainShowcase-heading">
           <span className="mainShowcase-heading-welcome-color font-demi">
             welcome to
