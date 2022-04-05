@@ -46,7 +46,7 @@ class User(AbstractUser):
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
 
-    zeal_id = models.CharField(max_length=16, unique=True, blank=True)
+    zeal_id = models.CharField(max_length=16, unique=True, blank=True, primary_key=True)
     admission_no = models.CharField(max_length=16)
     year = models.CharField(max_length=2)
     branch = models.CharField(max_length=64)
