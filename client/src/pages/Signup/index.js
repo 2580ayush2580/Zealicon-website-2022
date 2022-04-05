@@ -7,13 +7,20 @@ export default function Signup() {
   const dispatch = useDispatch();
   let history = useNavigate();
 
-  const [user, setUser] = useState({
-    name: "",
-    phone: "",
+  const initialData = {
+    first_name: "",
+    last_name: "",
+    contact_no: "",
     email: "",
-    admission: "",
+    admission_no: "",
     password: "",
-  });
+    year: "",
+    branch: "",
+    college: "",
+    re_password: "",
+  };
+
+  const [user, setUser] = useState(initialData);
 
   const handleChange = (e) => {
     setUser({
@@ -25,13 +32,20 @@ export default function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("name", user.name);
-    formData.append("phone", user.phone);
+    formData.append("first_name", user.first_name);
+    formData.append("last_name", user.last_name);
+    formData.append("contact_no", user.contact_no);
     formData.append("email", user.email);
-    formData.append("admission", user.admission);
+    formData.append("admission_no", user.admission_no);
     formData.append("password", user.password);
+    formData.append("year", user.year);
+    formData.append("branch", user.branch);
+    formData.append("college", user.college);
+    formData.append("re_password", user.re_password);
+    console.log(user);
     dispatch(RegisterUser(formData)).then((res) => {
-      console.log(res);
+      setUser(initialData);
+      history("/login");
     });
   };
 
@@ -43,14 +57,26 @@ export default function Signup() {
         <form onSubmit={handleSubmit}>
           <div className="d-flex flex-column">
             <div className="font-regular font-16 text-labelColor mt-4">
-              Name
+              First name
             </div>
             <input
               onChange={handleChange}
-              name="name"
+              name="first_name"
               className="input-container font-regular font-14 text-white mt-1"
               type={"text"}
-              placeholder={"John Snow"}
+              placeholder={"John"}
+            />
+          </div>
+          <div className="d-flex flex-column">
+            <div className="font-regular font-16 text-labelColor mt-4">
+              Last name
+            </div>
+            <input
+              onChange={handleChange}
+              name="last_name"
+              className="input-container font-regular font-14 text-white mt-1"
+              type={"text"}
+              placeholder={"Snow"}
             />
           </div>
           <div className="d-flex flex-column">
@@ -59,7 +85,7 @@ export default function Signup() {
             </div>
             <input
               onChange={handleChange}
-              name="phone"
+              name="contact_no"
               className="input-container font-regular font-14 text-white mt-1"
               type={"text"}
               placeholder="8923xx2234"
@@ -95,10 +121,34 @@ export default function Signup() {
             </div>
             <input
               onChange={handleChange}
-              name="admission"
+              name="admission_no"
               className="input-container font-regular font-14 text-white mt-1"
               type={"text"}
               placeholder="ex: 19CSE001"
+            />
+          </div>
+          <div className="d-flex flex-column">
+            <div className="font-regular font-16 text-labelColor mt-3">
+              Year
+            </div>
+            <input
+              onChange={handleChange}
+              name="year"
+              className="input-container font-regular font-14 text-white mt-1"
+              type={"number"}
+              placeholder="ex:- 2"
+            />
+          </div>
+          <div className="d-flex flex-column">
+            <div className="font-regular font-16 text-labelColor mt-3">
+              Branch
+            </div>
+            <input
+              onChange={handleChange}
+              name="branch"
+              className="input-container font-regular font-14 text-white mt-1"
+              type={"text"}
+              placeholder="CS"
             />
           </div>
           <div className="d-flex flex-column">
