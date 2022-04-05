@@ -7,19 +7,21 @@ class UserAdmin(admin.ModelAdmin):
     exclude = ["password"]
     list_display = [
         "zeal_id",
-        "username",
         "email",
+        "contact_no",
+        "admission_no",
         "first_name",
         "last_name",
-        "contact_no",
+        "college",
     ]
     search_fields = [
         "zeal_id",
-        "username",
         "email",
+        "contact_no",
+        "admission_no",
         "first_name",
         "last_name",
-        "contact_no",
+        "college",
     ]
 
 
