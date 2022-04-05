@@ -5,6 +5,7 @@ import ContactUs from "./pages/Contact";
 import Events from "./pages/Events";
 import ForgotPassword from "./pages/ForgotPassword";
 import Login from "./pages/Login";
+import Paynow from "./pages/Paynow";
 import Privacy from "./pages/Privacy";
 import Reach from "./pages/Reach";
 import Refund from "./pages/Refund";
@@ -41,6 +42,15 @@ const Routes = () => {
           <React.Suspense fallback={<div>Loading....</div>}>
             <Signup />
             {/* <Footer /> */}
+          </React.Suspense>
+        }
+      />
+      <Route
+        exact
+        path="/paynow"
+        element={
+          <React.Suspense fallback={<div>Loading....</div>}>
+            <Paynow />
           </React.Suspense>
         }
       />

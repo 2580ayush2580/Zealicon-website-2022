@@ -45,7 +45,7 @@ export default function Signup() {
     console.log(user);
     dispatch(RegisterUser(formData)).then((res) => {
       setUser(initialData);
-      history("/login");
+      history("/paynow");
     });
   };
 
