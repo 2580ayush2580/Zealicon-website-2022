@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Zealicon 2k22
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to setup development environment (Linux)
+1. Clone this repository `git clone https://github.com/OjusWiZard/Zealicon-2k22.git`.
+2. `cd Zealicon-2k22`.
+3. Run `virtualenv venv`.
+4. `source venv/bin/activate` to activate the virtual environment.
+5. Run `pip install -r requirements.txt` to install the dependencies.
+6. Run migrations using `python manage.py migrate`.
+7. `python manage.py runserver` and you're ready.
 
-## Available Scripts
+## Adding evironment variables
+1. Create a `.env` file.
+2. Set environment variables as below
+```sh
+# General Settings
 
-In the project directory, you can run:
+SERVER_HOST = ""
+DJANGO_SECRET_KEY = ""
+DEBUG = True
+FRONTEND_HOST = "zealicon.in"
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Razorpay Payment Settings
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+FEE_AMOUNT = 100
+KEY_ID = ""
+KEY_SECRET = ""
 
-### `npm test`
+# Email Settings
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+EMAIL_USE_TLS = False
+EMAIL_HOST = ""
+EMAIL_PORT = ""
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = ""
+DEFAULT_FROM_EMAIL = ""
+```
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Launcing on Production using Docker
+1. Create `.env` in root folder
+3. Run `docker-compose up`.
