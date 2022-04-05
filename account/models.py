@@ -1,4 +1,4 @@
-import uuid
+from random import randint
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 from django.utils import timezone
@@ -41,13 +41,12 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractUser):
-    id = models.AutoField(primary_key=True)
     email = models.EmailField(unique=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
 
-    zeal_id = models.CharField(max_length=16, unique=True)
+    zeal_id = models.CharField(max_length=16, unique=True, blank=True)
     username = models.SlugField(max_length=16, unique=True)
     contact_no = models.CharField(max_length=10, validators=[validate_contact_number])
     avatar = models.SmallIntegerField()
@@ -58,9 +57,12 @@ class User(AbstractUser):
     objects = UserManager()
 
     def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-        self.zeal_id = "Zeal-ID_" + f"{self.id:04}"
-        super().save(*args, **kwargs)
+        if not self.zeal_id:
+            zeal_id_generated = "Zeal-ID-" + f"{randint(0, 9999):04}"
+            while User.objects.filter(zeal_id=zeal_id_generated).exists():
+                zeal_id_generated = "Zeal-ID-" + f"{randint(0, 9999):04}"
+            self.zeal_id = zeal_id_generated
+            super().save(*args, **kwargs)
 
     def __str__(self):
         return self.username
