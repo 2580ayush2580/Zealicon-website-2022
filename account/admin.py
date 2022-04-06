@@ -23,6 +23,12 @@ class UserAdmin(admin.ModelAdmin):
         "last_name",
         "college",
     ]
+    actions = ["generate_zeal_id"]
+
+    def generate_zeal_id(self, request, queryset):
+        for user in queryset:
+            user.generate_zeal_id()
+            user.save()
 
 
 admin.site.register(User, UserAdmin)

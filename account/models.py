@@ -69,5 +69,11 @@ class User(AbstractUser):
 
     objects = UserManager()
 
+    def generate_zeal_id(self):
+        generated_zeal_id = "Zeal-ID-" + f"{randint(0, 9999):04}"
+        while User.objects.filter(zeal_id=generated_zeal_id).exists():
+            generated_zeal_id = "Zeal-ID-" + f"{randint(0, 9999):04}"
+        self.zeal_id = generated_zeal_id
+
     def __str__(self):
         return self.first_name + self.last_name

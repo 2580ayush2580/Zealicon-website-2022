@@ -28,10 +28,6 @@ class Payment(APIView):
 
     def post(self, request, format=None):
         if verify_payment(request.data):
-            user = User.objects.get(username=request.user.username)
-            user.is_paid = True
-            user.save()
-
             order = Order.objects.get(order_id=request.data.get("server_order_id"))
             fee_amount = os.environ.get("FEE_AMOUNT")
             order.amount_paid = fee_amount
@@ -39,6 +35,11 @@ class Payment(APIView):
             order.status = "captured"
             order.attempts = str(int(order.attempts) + 1)
             order.save()
+
+            user = request.user
+            if not user.zeal_id:
+                user.generate_zeal_id()
+            user.save()
 
             return Response({"status": "Payment Successful"})
         else:
