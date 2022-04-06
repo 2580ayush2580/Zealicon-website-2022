@@ -70,6 +70,7 @@ DJOSER = {
     "SET_PASSWORD_RETYPE": True,
     "LOGIN_FIELD": "email",
     "TOKEN_MODEL": None,
+    "SERIALIZERS": {"current_user": "account.serializers.UserSerializer"},
 }
 
 SIMPLE_JWT = {
