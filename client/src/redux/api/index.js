@@ -46,11 +46,28 @@ export const generateOrder = async () => {
 
 export const makePayment = async (formData) => {
   try {
-
     const { data } = await axios({
       method: "POST",
       url: `${url}/payment/`,
       data: formData,
+      headers: {
+        "Content-Type": `application/json`,
+        Authorization: `Bearer ${localStorage.getItem("jwt-token")}`,
+      }
+    })
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error)
+    return error.response.data;
+  }
+}
+
+export const fetchZealID = async () => {
+  try {
+    const { data } = await axios({
+      method: "GET",
+      url: `${url}/accounts/users/me/`,
       headers: {
         "Content-Type": `application/json`,
         Authorization: `Bearer ${localStorage.getItem("jwt-token")}`,
