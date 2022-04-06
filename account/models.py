@@ -76,4 +76,4 @@ class User(AbstractUser):
         self.zeal_id = generated_zeal_id
 
     def __str__(self):
-        return self.first_name + self.last_name
+        return self.first_name + " " + self.last_name

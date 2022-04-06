@@ -14,8 +14,7 @@ class Payment(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, format=None):
-        username = request.user.username
-        user = User.objects.get(username=username)
+        user = request.user
 
         order_data, order_id = payment_order(user)
         context = {
