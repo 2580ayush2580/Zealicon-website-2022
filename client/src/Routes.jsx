@@ -12,6 +12,8 @@ import Refund from "./pages/Refund";
 import ResetPassword from "./pages/ResetPassword";
 import Signup from "./pages/Signup";
 import Terms from "./pages/T&C";
+import UserPage from "./pages/UserPage";
+import ZealIDPage from "./pages/ZealIdPage";
 
 const Routes = () => {
   return (
@@ -51,6 +53,24 @@ const Routes = () => {
         element={
           <React.Suspense fallback={<div>Loading....</div>}>
             <Paynow />
+          </React.Suspense>
+        }
+      />
+      <Route
+        exact
+        path="/zeal"
+        element={
+          <React.Suspense fallback={<div>Loading....</div>}>
+            <ZealIDPage />
+          </React.Suspense>
+        }
+      />
+      <Route
+        exact
+        path="/user"
+        element={
+          <React.Suspense fallback={<div>Loading....</div>}>
+            <UserPage />
           </React.Suspense>
         }
       />

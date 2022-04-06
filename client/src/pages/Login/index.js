@@ -28,7 +28,7 @@ export default function Login() {
     formData.append("password", user.password);
     dispatch(LoginUser(formData)).then((res) => {
       setUser(initialState);
-      history("/paynow");
+      history("/user");
       console.log(res);
     });
   };

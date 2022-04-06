@@ -1,7 +1,12 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { generateOrder, makePayment } from "../../redux/api/index";
 
 export default function Paynow() {
+
+
+  let history = useNavigate();
+
   function loadScript(src) {
     return new Promise((resolve) => {
       const script = document.createElement("script");
@@ -63,8 +68,10 @@ export default function Paynow() {
 
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
+
+    
+    history("/paynow");
   }
-  const handleSubmit = (e) => { }
   return (
     <div className="fullscreen login p-100 d-flex justify-content-center align-items-center text-white font-48">
       <div className="form-bg">
