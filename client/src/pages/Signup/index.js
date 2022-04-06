@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { RegisterUser } from "../../redux/actions/auth";
+import { login, register } from "../../redux/api";
 
 export default function Signup() {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ export default function Signup() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("first_name", user.first_name);
@@ -42,11 +43,14 @@ export default function Signup() {
     formData.append("branch", user.branch);
     formData.append("college", user.college);
     formData.append("re_password", user.re_password);
-    console.log(user);
-    dispatch(RegisterUser(formData)).then((res) => {
-      setUser(initialData);
-      history("/login");
-    });
+    register(formData).then((res) => {
+      const loginFormData = new FormData();
+      formData.append("email",user.email);
+      formData.append("password",user.password);
+      login(formData).then((res) => {
+        history("/paynow")
+      })
+    })
   };
 
   return (
