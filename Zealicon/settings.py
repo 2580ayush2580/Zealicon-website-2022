@@ -73,12 +73,8 @@ DJOSER = {
 }
 
 SIMPLE_JWT = {
-    "USER_ID_FIELD": "zeal_id",
     "ACCESS_TOKEN_LIFETIME": timedelta(weeks=4),
     "REFRESH_TOKEN_LIFETIME": timedelta(weeks=4),
-    "ROTATE_REFRESH_TOKENS": False,
-    "BLACKLIST_AFTER_ROTATION": False,
-    "UPDATE_LAST_LOGIN": False,
 }
 
 MIDDLEWARE = [
