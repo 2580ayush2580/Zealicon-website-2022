@@ -11,6 +11,7 @@ export const register = async (formData) => {
       "Content-Type": `multipart/form-data`,
     },
   });
+  console.log(data)
   localStorage.setItem("jwt-token", data.access);
   return data;
 }
