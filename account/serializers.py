@@ -10,10 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
             "zeal_id",
             "admission_no",
             "email",
-            "first_name",
-            "last_name",
-            "year",
-            "branch",
+            "fullname",
             "college",
             "contact_no",
         ]
