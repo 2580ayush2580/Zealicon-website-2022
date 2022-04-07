@@ -89,6 +89,7 @@ body {
   --primaryColor: #163d5b;
   --footer-bg: #1F0851;
   --formColor: #b15cd5;
+  --nameColor: #BE6EDA;
   --policyColor: #ecd1ff;
   --teamColor1: #3d4ff6;
   --teamColor2: #5ad6f9;
@@ -154,6 +155,10 @@ body {
   color: var(--formColor);
 }
 
+.text-nameColor{
+  color: var(--nameColor);
+}
+
 .text-policyColor {
   color: var(--policyColor);
 }
@@ -164,6 +169,20 @@ body {
   width: 412px;
   box-shadow: 0px 4px 6px rgba(28, 28, 28, 0.06);
   border-radius: 16px;
+}
+
+.box-bg{
+  background-color: #250c3a;
+  padding: 36px;
+  width: 250px;
+  height: 250px;
+  box-shadow: 0px 4px 6px rgba(28, 28, 28, 0.06);
+  border-radius: 16px;
+}
+
+.box-img{
+  width: 80px;
+  height: 80px;
 }
 
 .input-container {
