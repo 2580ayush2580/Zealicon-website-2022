@@ -1,4 +1,5 @@
 import React from "react";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import BackgrounImage from "../../assets/image/background.gif";
 import ZealiconLogo from "../../assets/image/zealicon-logo.svg";
 import { Link } from "react-router-dom";
@@ -18,45 +19,36 @@ const Home = () => {
   return (
     <div id="home" className="mainShowcase-wrapper">
       <div className="homeNavbar">
-        <ul className="homeNavbarItem font-demi">
-          <li>
-            <button className="btn">
-              <a className="navbarBtn" href="/#home">
-                <img
-                  className="ZealiconLogo"
-                  src={ZealiconLogo}
-                  alt="Zealicon"
-                />
-              </a>
-            </button>
-          </li>
-          <Link to="events">
-            <button className="btn navbarBtn">Events</button>
-          </Link>
-          <li>
-            <a className="navbarBtn" href="/#about">
-              <button className="btn navbarBtn">About</button>
-            </a>
-          </li>
-          <li>
-            <a className="navbarBtn" href="/#team">
-              <button className="btn navbarBtn">Team</button>
-            </a>
-          </li>
-          <li>
-            <a className="navbarBtn" href="/#sponsor">
-              <button className="btn navbarBtn">Sponsor</button>
-            </a>
-          </li>
-          <li>
-            <a className="navbarBtn" href="/#reach">
-              <button className="btn navbarBtn">Reach</button>
-            </a>
-          </li>
-          <Link to="/login">
-            <button className="btn navbar-btn">Sign in</button>
-          </Link>
-        </ul>
+        <Navbar className="navbar-bg custom-navbar" bg="light" expand="lg">
+          <Container>
+            <Navbar.Brand href="/">
+              <img className="ZealiconLogo" src={ZealiconLogo} alt="Zealicon" />
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="me-auto">
+                <Nav.Link href="/events">
+                  <span className="navbar-text font-demi">Events</span>
+                </Nav.Link>
+                <Nav.Link href="/#about">
+                  <span className="navbar-text font-demi">About</span>
+                </Nav.Link>
+                <Nav.Link href="/#team">
+                  <span className="navbar-text font-demi">Team</span>
+                </Nav.Link>
+                <Nav.Link href="/#sponsor">
+                  <span className="navbar-text font-demi">Sponsor</span>
+                </Nav.Link>
+                <Nav.Link href="/#reach">
+                  <span className="navbar-text font-demi">Reach</span>
+                </Nav.Link>
+                <Nav.Link href="/login">
+                  <button className="btn navbar-btn">Sign in</button>
+                </Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
       </div>
       <div className="mainShowcase">
         {/* <img

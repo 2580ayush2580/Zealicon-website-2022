@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Children } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { generateOrder, makePayment } from "../../redux/api/index";
 
@@ -58,7 +58,13 @@ export default function Paynow() {
         };
 
         const result = await makePayment(data);
-        console.log(result);
+        console.log('result',result);
+        if(result.status === 'Payment Successful'){
+          history("/user")
+        }
+        else{
+          alert("Payment Failed")
+        }
       },
       theme: {
         color: "#FD8D41",
@@ -77,10 +83,10 @@ export default function Paynow() {
       <div className="form-bg">
         <div className="font-bold font-30 text-white text-center">Paynow</div>
         <form onSubmit={(e) => displayRazorpay(e)}>
-          <div className="d-flex justify-content-center">
-            <button
+          <div className="d-flex text-white justify-content-center">
+            <input
+              type="submit"
               className="input-btn mt-4 font-bold text-white font-18"
-              type={"submit"}
               value="Pay Now"
             />
           </div>
