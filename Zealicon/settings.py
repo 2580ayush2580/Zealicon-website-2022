@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "account",
     "payments",
+    "events",
     "rest_framework",
     "djoser",
     "corsheaders",
