@@ -47,10 +47,12 @@ class User(AbstractUser):
     date_joined = models.DateTimeField(default=timezone.now)
 
     zeal_id = models.CharField(max_length=16, blank=True, null=True)
-    admission_no = models.CharField(max_length=16)
+    admission_no = models.CharField(max_length=16, unique=True)
     fullname = models.CharField(max_length=128)
     college = models.CharField(max_length=128)
-    contact_no = models.CharField(max_length=10, validators=[validate_contact_number])
+    contact_no = models.CharField(
+        max_length=10, unique=True, validators=[validate_contact_number]
+    )
     username = None
 
     USERNAME_FIELD = "email"
@@ -68,6 +70,10 @@ class User(AbstractUser):
         while User.objects.filter(zeal_id=generated_zeal_id).exists():
             generated_zeal_id = "Zeal-ID-" + f"{randint(0, 9999):04}"
         self.zeal_id = generated_zeal_id
+
+    def save(self, *args, **kwargs):
+        self.admission_no = self.admission_no.upper()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.fullname
