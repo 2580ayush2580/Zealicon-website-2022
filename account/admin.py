@@ -10,8 +10,7 @@ class UserAdmin(admin.ModelAdmin):
         "email",
         "contact_no",
         "admission_no",
-        "first_name",
-        "last_name",
+        "fullname",
         "college",
     ]
     search_fields = [
@@ -19,8 +18,7 @@ class UserAdmin(admin.ModelAdmin):
         "email",
         "contact_no",
         "admission_no",
-        "first_name",
-        "last_name",
+        "fullname",
         "college",
     ]
     actions = ["generate_zeal_id"]
