@@ -1,31 +1,61 @@
-import React from 'react'
-
+import React from "react";
+import EventCard from "../../components/EventCard";
+import TestImage from "../../assets/image/event-card1.jpg";
+import Slider from "react-slick";
 export default function Events() {
+  const settings = {
+    className: "center variable-width",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "20px",
+    slidesToShow: 4,
+    speed: 500,
+    variableWidth: true,
+    swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 1500,
+        settings: {
+          centerPadding: "80px",
+          slidesToShow: 2,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+          dots: true,
+        },
+      },
+    ],
+  };
   return (
-    <div className='fullscreen default p-100'>
-        <div className="font-bold font-36 text-white text-center">EVENTS</div>
-        <div className='container my-5'>
-            <div className='row font-24 text-white font-medium g-4'>
-                <div className='col-lg-4 col-sm-6 center'>
-                    <div className='bg-5 event-box center'>COLORALO</div>
-                </div>
-                <div className='col-lg-4 col-sm-6 center'>
-                    <div className='bg-4 event-box center'>PLAY IT ON</div>
-                </div>
-                <div className='col-lg-4 col-sm-6 center'>
-                    <div className='bg-1 event-box center'>MECHAVOLTZ</div>
-                </div>
-                <div className='col-lg-4 col-sm-6 center'>
-                    <div className='bg-2 event-box center'>ROBOTILES</div>
-                </div>
-                <div className='col-lg-4 col-sm-6 center'>
-                    <div className='bg-5 event-box center'>Z-WARS</div>
-                </div>
-                <div className='col-lg-4 col-sm-6 center'>
-                    <div className='bg-4 event-box center'>CODERZ</div>
-                </div>
-            </div>
-        </div>
+    <div className="fullscreen default event-page">
+      <div className="font-bold font-36 text-white text-center">EVENTS</div>
+      <div className="my-5">
+        <Slider {...settings}>
+          <EventCard src={TestImage} />
+          <EventCard />
+          <EventCard src={TestImage} />
+          <EventCard />
+          <EventCard src={TestImage} />
+          <EventCard />
+        </Slider>
+      </div>
     </div>
-  )
+  );
 }
