@@ -1,8 +1,9 @@
 from django.urls import include, path
-from account.views import get_zeal_id
+from rest_framework.routers import DefaultRouter
+from account.views import UserViewSet
 
-urlpatterns = [
-    path("", include("djoser.urls")),
-    path("", include("djoser.urls.jwt")),
-    path("get_zeal_id/", get_zeal_id, name="get_zeal_id"),
-]
+
+router = DefaultRouter()
+router.register("", UserViewSet, basename="user")
+
+urlpatterns = router.urls

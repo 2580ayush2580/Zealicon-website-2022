@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
-from datetime import timedelta
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -52,31 +51,8 @@ INSTALLED_APPS = [
     "payments",
     "events",
     "rest_framework",
-    "djoser",
     "corsheaders",
 ]
-
-REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
-    ]
-}
-
-DJOSER = {
-    "USERNAME_RESET_CONFIRM_URL": "reset/username/{uid}/{token}",
-    "PASSWORD_RESET_CONFIRM_URL": "reset/password/{uid}/{token}",
-    "USERNAME_CHANGED_EMAIL_CONFIRMATION": True,
-    "PASSWORD_CHANGED_EMAIL_CONFIRMATION": True,
-    "SET_PASSWORD_RETYPE": True,
-    "LOGIN_FIELD": "email",
-    "TOKEN_MODEL": None,
-    "SERIALIZERS": {"current_user": "account.serializers.UserSerializer"},
-}
-
-SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(weeks=4),
-    "REFRESH_TOKEN_LIFETIME": timedelta(weeks=4),
-}
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
@@ -92,7 +68,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "Zealicon.urls"
 
-AUTH_USER_MODEL = "account.User"
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 CORS_ORIGIN_ALLOW_ALL = True
 
