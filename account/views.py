@@ -28,4 +28,6 @@ def get_zeal_id(request):
                     user = User.objects.get(admission_no=query)
                 except User.DoesNotExist:
                     return Response({"message": "User not found"})
-    return Response(UserSerializer(user).data)
+        return Response(UserSerializer(user).data)
+    else:
+        return Response({"message": "User not found"})
