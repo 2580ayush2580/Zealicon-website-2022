@@ -1,41 +1,41 @@
 import os
 from rest_framework.response import Response
-from account.models import User
+from account.utils import parse_user
 from payments.models import Order
-from .razorpay_utils import payment_order, verify_payment
+from payments.razorpay_utils import payment_order, verify_payment
 
 # REST FRAMEWORK IMPORTS
 from rest_framework.views import APIView
-from rest_framework.permissions import IsAuthenticated
 
 
 # REST View
 class Payment(APIView):
-    permission_classes = [IsAuthenticated]
-
     def get(self, request, format=None):
-        user = request.user
+        query = request.data.get("user_identity")
+        user = parse_user(query)
 
-        order_data, order_id = payment_order(user)
-        context = {
-            "key_id": os.environ.get("KEY_ID"),
-            "order_id": order_data["id"],
-            "amount": order_data["amount"],
-            "server_order_id": order_id,
-        }
-        return Response(context)
+        if user:
+            order_data, order_id = payment_order(user)
+            context = {
+                "key_id": os.environ.get("KEY_ID"),
+                "order_id": order_data["id"],
+                "amount": order_data["amount"],
+                "server_order_id": order_id,
+            }
+            return Response(context)
+        else:
+            return Response({"message": "User not found"})
 
     def post(self, request, format=None):
         if verify_payment(request.data):
             order = Order.objects.get(order_id=request.data.get("server_order_id"))
-            fee_amount = os.environ.get("FEE_AMOUNT")
-            order.amount_paid = fee_amount
+            order.amount_paid = order.amount_due
             order.amount_due = 0
             order.status = "captured"
             order.attempts = str(int(order.attempts) + 1)
             order.save()
 
-            user = request.user
+            user = order.user
             if not user.zeal_id:
                 user.generate_zeal_id()
             user.save()

@@ -1,6 +1,6 @@
-from unicodedata import category
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
-from events.models import Event, Event_Category, Society, Room, Venue, Building
+from account.models import User
+from events.models import Event, Society, Venue
 
 
 class SocietySerializer(ModelSerializer):
@@ -15,20 +15,23 @@ class VenueSerializer(ModelSerializer):
         fields = "__all__"
 
 
+class ContactSerializer(ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("fullname", "contact_no")
+
+
 class EventSerializer(ModelSerializer):
     category = SerializerMethodField("get_category")
     society = SerializerMethodField("get_society")
-    contact = SerializerMethodField("get_contact")
     venue = SerializerMethodField("get_venue")
+    contact = ContactSerializer()
 
     def get_category(self, event):
         return event.category.name
 
     def get_society(self, event):
         return event.society.name
-
-    def get_contact(self, event):
-        return event.contact.fullname
 
     def get_venue(self, event):
         return event.venue.building.name + " - " + event.venue.room.name

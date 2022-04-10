@@ -1,5 +1,5 @@
 from rest_framework.viewsets import ReadOnlyModelViewSet
-from events.models import Event, Event_Category, Society, Room, Venue, Building
+from events.models import Event
 from events.serializers import EventSerializer
 
 
