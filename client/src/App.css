@@ -90,9 +90,9 @@ body {
 
 :root {
   --primaryColor: #163d5b;
-  --footer-bg: #1F0851;
+  --footer-bg: #1f0851;
   --formColor: #b15cd5;
-  --nameColor: #BE6EDA;
+  --nameColor: #be6eda;
   --policyColor: #ecd1ff;
   --teamColor1: #3d4ff6;
   --teamColor2: #5ad6f9;
@@ -102,7 +102,7 @@ body {
   --labelColor: #bab7bd;
 }
 
-.footer-bg{
+.footer-bg {
   background-color: var(--footer-bg);
 }
 
@@ -158,7 +158,7 @@ body {
   color: var(--formColor);
 }
 
-.text-nameColor{
+.text-nameColor {
   color: var(--nameColor);
 }
 
@@ -174,7 +174,7 @@ body {
   border-radius: 16px;
 }
 
-.box-bg{
+.box-bg {
   background-color: #250c3a;
   padding: 36px;
   width: 250px;
@@ -183,15 +183,15 @@ body {
   border-radius: 16px;
 }
 
-.zeal-bg{
+.zeal-bg {
   box-shadow: 0px 4px 6px rgba(28, 28, 28, 0.06);
   border-radius: 16px;
   padding: 36px;
   background-color: #250c3a;
-  border: 3px dashed #D4A4EA;;
+  border: 3px dashed #d4a4ea;
 }
 
-.box-img{
+.box-img {
   width: 80px;
   height: 80px;
 }
@@ -330,6 +330,35 @@ body {
   }
   .sponsor-row {
     margin-top: 0px !important;
+  }
+}
+.footer-custom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+}
+.footer-links {
+  display: flex;
+}
+.footer-links-margin {
+  margin: 0 20px;
+}
+@media screen and (max-width: 1000px) {
+  .footer-custom {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-links {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-links-margin {
+    margin: 8px 20px;
   }
 }
 

@@ -20,7 +20,6 @@
   padding: 34px 0px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   color: white;
 }
 .reach-page-right-text-heading {
@@ -43,5 +42,9 @@
 @media only screen and (max-width: 500px) {
   .reach-page-right-map {
     padding: 40px 20px;
+  }
+  .reach-page-right-text {
+    font-size: 16px;
+    flex-direction: column;
   }
 }

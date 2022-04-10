@@ -19,7 +19,11 @@ const Home = () => {
   return (
     <div id="home" className="mainShowcase-wrapper">
       <div className="homeNavbar">
-        <Navbar className="navbar-bg custom-navbar" bg="light" expand="lg">
+        <Navbar
+          className="navbar-bg navbar-dark custom-navbar"
+          bg="light"
+          expand="lg"
+        >
           <Container>
             <Navbar.Brand href="/">
               <img className="ZealiconLogo" src={ZealiconLogo} alt="Zealicon" />

@@ -20,7 +20,7 @@ export default function Reach() {
           ></iframe>
           <div className="reach-page-right-text">
             <div>
-              <div className="reach-page-right-text-heading font-bold">
+              <div className="reach-page-right-text-heading font-bold mt-3">
                 Dr. Prashant Chauhan
               </div>
               <div className="reach-page-right-text-normalText font-bold">
@@ -31,8 +31,8 @@ export default function Reach() {
               </div>
             </div>
             <div>
-              <div className="reach-page-right-text-heading font-bold">
-                Dr. Prashant Chauhan
+              <div className="reach-page-right-text-heading font-bold mt-3">
+                Prajwal Shirur
               </div>
               <div className="reach-page-right-text-normalText font-bold">
                 Festival Convener
