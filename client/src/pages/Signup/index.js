@@ -1,24 +1,16 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { RegisterUser } from "../../redux/actions/auth";
-import { login, register } from "../../redux/api";
+import { generateOrder, login, makePayment, register } from "../../redux/api";
 
 export default function Signup() {
-  const dispatch = useDispatch();
-  let history = useNavigate();
-
   const initialData = {
-    first_name: "",
-    last_name: "",
+    full_name: "",
     contact_no: "",
     email: "",
     admission_no: "",
     password: "",
-    year: "",
-    branch: "",
     college: "",
-    re_password: "",
   };
 
   const [user, setUser] = useState(initialData);
@@ -29,27 +21,103 @@ export default function Signup() {
       [e.target.name]: e.target.value,
     });
   };
+  
+  let history = useNavigate();
+
+  function loadScript(src) {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.onload = () => {
+        resolve(true);
+      };
+      script.onerror = () => {
+        resolve(false);
+      };
+      document.body.appendChild(script);
+    });
+  }
+
+  async function displayRazorpay() {
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+    console.log(res);
+    if (!res) {
+      alert("Razorpay SDK failed to load. Are you online?");
+      return;
+    }
+
+    // send user_identity in razorpay
+    const formData = new FormData();
+    formData.append("user_identity", user.email);
+    console.log(formData)
+
+    // function of razorpay
+    const result = await generateOrder(formData);
+    console.log("RESULTS: ", result);
+    if (!result) {
+      alert("Server error. Are you online?");
+      return;
+    }
+
+    const { key_id, amount, order_id, server_order_id } = result;
+
+    const options = {
+      key: key_id, // Enter the Key ID generated from the Dashboard
+      amount: amount.toString(),
+      currency: "INR",
+      name: "Tech Trek",
+      description: "TechTrek registration fees",
+      order_id: order_id,
+      handler: async function (response) {
+        console.log(response);
+        const data = {
+          razorpay_payment_id: response.razorpay_payment_id,
+          razorpay_order_id: response.razorpay_order_id,
+          razorpay_signature: response.razorpay_signature,
+          server_order_id,
+        };
+
+        const result = await makePayment(data);
+        console.log('result',result);
+        if(result.status === 'Payment Successful'){
+          history("/user")
+        }
+        else{
+          alert("Payment Failed")
+        }
+      },
+      theme: {
+        color: "#FD8D41",
+        backdrop_color: "#231F2C",
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+
+    
+    history("/paynow");
+  }
 
   const handleSubmit = async(e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("first_name", user.first_name);
-    formData.append("last_name", user.last_name);
+    formData.append("fullname", user.full_name);
     formData.append("contact_no", user.contact_no);
     formData.append("email", user.email);
     formData.append("admission_no", user.admission_no);
     formData.append("password", user.password);
-    formData.append("year", user.year);
-    formData.append("branch", user.branch);
     formData.append("college", user.college);
-    formData.append("re_password", user.re_password);
     register(formData).then((res) => {
-      const loginFormData = new FormData();
-      formData.append("email",user.email);
-      formData.append("password",user.password);
-      login(formData).then((res) => {
-        history("/paynow")
-      })
+      console.log(res)
+      // const loginFormData = new FormData();
+      // formData.append("email",user.email);
+      // formData.append("password",user.password);
+      // login(formData).then(() => {
+        displayRazorpay()
+      // })
     })
   };
 
@@ -61,26 +129,14 @@ export default function Signup() {
         <form onSubmit={handleSubmit}>
           <div className="d-flex flex-column">
             <div className="font-regular font-16 text-labelColor mt-4">
-              First name
+              Full name
             </div>
             <input
               onChange={handleChange}
-              name="first_name"
+              name="full_name"
               className="input-container font-regular font-14 text-white mt-1"
               type={"text"}
               placeholder={"John"}
-            />
-          </div>
-          <div className="d-flex flex-column">
-            <div className="font-regular font-16 text-labelColor mt-4">
-              Last name
-            </div>
-            <input
-              onChange={handleChange}
-              name="last_name"
-              className="input-container font-regular font-14 text-white mt-1"
-              type={"text"}
-              placeholder={"Snow"}
             />
           </div>
           <div className="d-flex flex-column">
@@ -133,47 +189,11 @@ export default function Signup() {
           </div>
           <div className="d-flex flex-column">
             <div className="font-regular font-16 text-labelColor mt-3">
-              Year
-            </div>
-            <input
-              onChange={handleChange}
-              name="year"
-              className="input-container font-regular font-14 text-white mt-1"
-              type={"number"}
-              placeholder="ex:- 2"
-            />
-          </div>
-          <div className="d-flex flex-column">
-            <div className="font-regular font-16 text-labelColor mt-3">
-              Branch
-            </div>
-            <input
-              onChange={handleChange}
-              name="branch"
-              className="input-container font-regular font-14 text-white mt-1"
-              type={"text"}
-              placeholder="CS"
-            />
-          </div>
-          <div className="d-flex flex-column">
-            <div className="font-regular font-16 text-labelColor mt-3">
               Create Password
             </div>
             <input
               onChange={handleChange}
               name="password"
-              className="input-container font-regular font-14 text-white mt-1"
-              type={"password"}
-              placeholder="Password.."
-            />
-          </div>
-          <div className="d-flex flex-column">
-            <div className="font-regular font-16 text-labelColor mt-3">
-              Re-enter Password
-            </div>
-            <input
-              onChange={handleChange}
-              name="re_password"
               className="input-container font-regular font-14 text-white mt-1"
               type={"password"}
               placeholder="Password.."

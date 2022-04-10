@@ -5,7 +5,7 @@ const url = "https://zealicon.pythonanywhere.com";
 export const register = async (formData) => {
   const { data } = await axios({
     method: "post",
-    url: `${url}/accounts/users/`,
+    url: `${url}/accounts/`,
     data: formData,
     headers: {
       "Content-Type": `multipart/form-data`,
@@ -29,19 +29,41 @@ export const login = async (formData) => {
   return data;
 }
 
+export const loginZeal = async (formData) => {
+  try{
+    const { data } = await axios({
+      method: "GET",
+      url: `${url}/accounts/users/`,
+      data: formData,
+      headers: {
+        "Content-Type": `multipart/form-data`,
+      },
+    });
+    // localStorage.setItem("jwt-token", data.access);
+    return data;
+  } catch (error) {
+    console.log(error)
+    return error.response.data;
+  }
+}
+// /accounts/get_zeal_id/
 
-export const generateOrder = async () => {
-  const { data } = await axios({
-    method: "GET",
-    url: `${url}/payment/`,
-    headers: {
-      "Content-Type": `application/json`,
-      Authorization: `Bearer ${localStorage.getItem("jwt-token")}`,
-    }
-  })
 
-
-  return data;
+export const generateOrder = async (formData) => {
+  try{
+    const { data } = await axios({
+      method: "GET",
+      url: `${url}/payment/`,
+      data: formData,
+      headers: {
+        "Content-Type": `multipart/form-data`,
+      }
+    })
+    return data;
+  } catch (error) {
+    console.log(error)
+    return error.response.data;
+  }
 }
 
 export const makePayment = async (formData) => {

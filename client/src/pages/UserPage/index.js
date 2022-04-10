@@ -26,7 +26,7 @@ export default function UserPage() {
     }, [])
   return (
     <div className="fullscreen login p-75 d-flex flex-column justify-content-center align-items-center text-white font-48">
-        <div className='font-bold font-48 text-nameColor'>Hey Paarth,</div>
+        <div className='font-bold font-48 text-nameColor'>Hey {details.first_name},</div>
         <div className='font-bold font-68 text-white text-center justify'>Your Zealicon ID is</div>
         <div className="zeal-bg mx-2 text-center">
             <div className="font-demi font-36 text-white">{details.zeal_id}</div>
