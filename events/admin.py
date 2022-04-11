@@ -1,5 +1,13 @@
 from django.contrib import admin
-from events.models import Event, Event_Category, Society, Room, Venue, Building
+from events.models import (
+    Event,
+    Event_Category,
+    Society,
+    Room,
+    Venue,
+    Building,
+    EventRegistration,
+)
 
 
 class SocietyAdmin(admin.ModelAdmin):
@@ -38,6 +46,12 @@ class EventAdmin(admin.ModelAdmin):
         "rules",
         "prizes",
     )
+
+
+class EventRegistrationAdmin(admin.ModelAdmin):
+    list_display = ("event", "participant", "status", "registration_time")
+    list_filter = ("status", "event")
+    search_fields = ("event", "participant")
 
 
 admin.site.register(Society, SocietyAdmin)

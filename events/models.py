@@ -61,3 +61,19 @@ class Event(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class EventRegistration(models.Model):
+    participant = models.ForeignKey("account.Participant", on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    is_active = models.BooleanField(default=True)
+    registration_time = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return (
+            self.event.name
+            + " - "
+            + self.participant.zeal_id
+            + " - "
+            + self.participant.fullname
+        )
