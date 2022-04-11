@@ -19,22 +19,18 @@ class EventRegistrationViewSet(ReadOnlyModelViewSet):
         event_id = request.query_params.get("event_id")
         zeal_id = request.query_params.get("zeal_id")
 
-        if not event_id or not zeal_id:
+        if not event_id and not zeal_id:
             return Response(
-                {"message": "Please provide event_id and zeal_id"}, status=400
+                {"message": "Please provide either event_id or zeal_id or both"},
+                status=400,
             )
 
-        try:
-            event = Event.objects.get(id=event_id)
-            participant = Participant.objects.get(zeal_id=zeal_id)
-        except Event.DoesNotExist:
-            return Response({"message": "Event does not exist"}, status=400)
-        except Participant.DoesNotExist:
-            return Response({"message": "Participant does not exist"}, status=400)
+        registrations = EventRegistration.objects.all()
+        if event_id:
+            registrations = registrations.filter(event__id=event_id)
+        if zeal_id:
+            registrations = registrations.filter(participant__zeal_id=zeal_id)
 
-        registrations = EventRegistration.objects.filter(
-            event=event, participant=participant
-        )
         serializer = EventRegistrationSerializer(registrations, many=True)
         return Response(serializer.data)
 
