@@ -1,8 +1,21 @@
 from random import randint
 from django.db import models
+from django.contrib.auth.models import User
 from django.utils import timezone
 
+from events.models import Society
 from .validators import validate_contact_number
+
+
+class UserDetails(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    contact_no = models.CharField(
+        max_length=10, unique=True, validators=[validate_contact_number]
+    )
+    society = models.ForeignKey(Society, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.user.username
 
 
 class Participant(models.Model):

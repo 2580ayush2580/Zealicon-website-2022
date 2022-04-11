@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Participant
+from .models import Participant, UserDetails
 
 
 class ParticipantAdmin(admin.ModelAdmin):
@@ -29,4 +29,10 @@ class ParticipantAdmin(admin.ModelAdmin):
             participant.save()
 
 
+class UserDetailsAdmin(admin.ModelAdmin):
+    list_display = ["user", "contact_no", "society"]
+    search_fields = ["user", "contact_no", "society"]
+
+
 admin.site.register(Participant, ParticipantAdmin)
+admin.site.register(UserDetails, UserDetailsAdmin)
