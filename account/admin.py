@@ -29,6 +29,12 @@ class ParticipantAdmin(admin.ModelAdmin):
             participant.generate_zeal_id()
             participant.save()
 
+    def get_actions(self, request):
+        actions = super().get_actions(request)
+        if not request.user.is_superuser:
+            del actions["generate_zeal_id"]
+        return actions
+
 
 class UserDetailsAdmin(admin.ModelAdmin):
     list_display = ["user", "contact_no", "society"]
