@@ -93,12 +93,31 @@ WSGI_APPLICATION = "Zealicon.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "database/db.sqlite3",
+envvars = os.environ.keys()
+if (
+    "POSTGRES_DB" in envvars
+    and "POSTGRES_USER" in envvars
+    and "POSTGRES_PASSWORD" in envvars
+    and "POSTGRES_HOST" in envvars
+    and "POSTGRES_PORT" in envvars
+):
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.environ["POSTGRES_DB"],
+            "USER": os.environ["POSTGRES_USER"],
+            "PASSWORD": os.environ["POSTGRES_PASSWORD"],
+            "HOST": os.environ["POSTGRES_HOST"],
+            "PORT": int(os.environ["POSTGRES_PORT"]),
+        }
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "database/db.sqlite3",
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
