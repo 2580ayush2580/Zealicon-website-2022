@@ -9,7 +9,6 @@ export default function Signup() {
     contact_no: "",
     email: "",
     admission_no: "",
-    password: "",
     college: "",
   };
 
@@ -48,13 +47,8 @@ export default function Signup() {
       return;
     }
 
-    // send user_identity in razorpay
-    const formData = new FormData();
-    formData.append("user_identity", user.email);
-    console.log(formData)
-
     // function of razorpay
-    const result = await generateOrder(formData);
+    const result = await generateOrder();
     console.log("RESULTS: ", result);
     if (!result) {
       alert("Server error. Are you online?");
@@ -67,8 +61,8 @@ export default function Signup() {
       key: key_id, // Enter the Key ID generated from the Dashboard
       amount: amount.toString(),
       currency: "INR",
-      name: "Tech Trek",
-      description: "TechTrek registration fees",
+      name: "Zealicon 2022 ",
+      description: "Zealicon registration fees",
       order_id: order_id,
       handler: async function (response) {
         console.log(response);
@@ -77,19 +71,25 @@ export default function Signup() {
           razorpay_order_id: response.razorpay_order_id,
           razorpay_signature: response.razorpay_signature,
           server_order_id,
+          fullname: user.full_name,
+          contact_no: user.contact_no,
+          college: user.college,
+          admission_no: user.admission_no,
+          email: user.email
         };
 
         const result = await makePayment(data);
         console.log('result',result);
-        if(result.status === 'Payment Successful'){
+        if(result.email){
           history("/user")
         }
         else{
+          history("/register")
           alert("Payment Failed")
         }
       },
       theme: {
-        color: "#FD8D41",
+        color: "#7632CB",
         backdrop_color: "#231F2C",
       },
     };
@@ -98,27 +98,28 @@ export default function Signup() {
     paymentObject.open();
 
     
-    history("/paynow");
+    history("/user");
   }
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("fullname", user.full_name);
-    formData.append("contact_no", user.contact_no);
-    formData.append("email", user.email);
-    formData.append("admission_no", user.admission_no);
-    formData.append("password", user.password);
-    formData.append("college", user.college);
-    register(formData).then((res) => {
-      console.log(res)
-      // const loginFormData = new FormData();
-      // formData.append("email",user.email);
-      // formData.append("password",user.password);
-      // login(formData).then(() => {
-        displayRazorpay()
-      // })
-    })
+    displayRazorpay()
+    // const formData = new FormData();
+    // formData.append("fullname", user.full_name);
+    // formData.append("contact_no", user.contact_no);
+    // formData.append("email", user.email);
+    // formData.append("admission_no", user.admission_no);
+    // formData.append("password", user.password);
+    // formData.append("college", user.college);
+    // register(formData).then((res) => {
+    //   console.log(res)
+    //   // const loginFormData = new FormData();
+    //   // formData.append("email",user.email);
+    //   // formData.append("password",user.password);
+    //   // login(formData).then(() => {
+        
+    //   // })
+    // })
   };
 
   return (
@@ -185,18 +186,6 @@ export default function Signup() {
               className="input-container font-regular font-14 text-white mt-1"
               type={"text"}
               placeholder="ex: 19CSE001"
-            />
-          </div>
-          <div className="d-flex flex-column">
-            <div className="font-regular font-16 text-labelColor mt-3">
-              Create Password
-            </div>
-            <input
-              onChange={handleChange}
-              name="password"
-              className="input-container font-regular font-14 text-white mt-1"
-              type={"password"}
-              placeholder="Password.."
             />
           </div>
           <div className="d-flex justify-content-center">
