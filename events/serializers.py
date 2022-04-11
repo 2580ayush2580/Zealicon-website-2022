@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
-from account.models import User
+from account.models import Participant
 from events.models import Event, Society, Venue
 
 
@@ -17,7 +17,7 @@ class VenueSerializer(ModelSerializer):
 
 class ContactSerializer(ModelSerializer):
     class Meta:
-        model = User
+        model = Participant
         fields = ("fullname", "contact_no")
 
 

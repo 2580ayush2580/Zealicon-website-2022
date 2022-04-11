@@ -1,24 +1,24 @@
 from django.core.validators import validate_email
 from django.forms import ValidationError
-from account.models import User
+from account.models import Participant
 from account.validators import validate_contact_number
 
 
-def parse_user(query):
+def parse_participant(query):
     try:
         validate_email(query)
-        user = User.objects.get(email=query)
-    except User.DoesNotExist:
+        participant = Participant.objects.get(email=query)
+    except Participant.DoesNotExist:
         return
     except ValidationError:
         try:
             validate_contact_number(query)
-            user = User.objects.get(contact_no=query)
-        except User.DoesNotExist:
+            participant = Participant.objects.get(contact_no=query)
+        except Participant.DoesNotExist:
             return
         except ValidationError:
             try:
-                user = User.objects.get(admission_no=query.upper())
-            except User.DoesNotExist:
+                participant = Participant.objects.get(admission_no=query.upper())
+            except Participant.DoesNotExist:
                 return
-    return user
+    return participant

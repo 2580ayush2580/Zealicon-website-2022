@@ -1,11 +1,11 @@
 from rest_framework import serializers
 
-from .models import User
+from .models import Participant
 
 
-class UserSerializer(serializers.ModelSerializer):
+class ParticipantSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
+        model = Participant
         fields = [
             "zeal_id",
             "admission_no",

@@ -1,7 +1,6 @@
 import os
 from rest_framework.response import Response
-from account.utils import parse_user
-from account.serializers import UserSerializer
+from account.serializers import ParticipantSerializer
 from payments.models import Order
 from payments.razorpay_utils import payment_order, verify_payment
 
@@ -30,13 +29,13 @@ class Payment(APIView):
             order.attempts = str(int(order.attempts) + 1)
             order.save()
 
-            serializer = UserSerializer(data=request.data)
+            serializer = ParticipantSerializer(data=request.data)
             if serializer.is_valid():
                 serializer.save()
-                user = serializer.instance
-                if not user.zeal_id:
-                    user.generate_zeal_id()
-                user.save()
+                participant = serializer.instance
+                if not participant.zeal_id:
+                    participant.generate_zeal_id()
+                participant.save()
                 return Response(serializer.data)
             return Response(serializer.errors)
         else:

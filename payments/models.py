@@ -1,5 +1,5 @@
 from django.db import models
-from account.models import User
+from account.models import Participant
 from django.utils import timezone
 
 

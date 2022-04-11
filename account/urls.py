@@ -4,6 +4,6 @@ from account.views import UserViewSet
 
 
 router = DefaultRouter()
-router.register("", UserViewSet, basename="user")
+router.register("", UserViewSet, basename="participant")
 
 urlpatterns = router.urls

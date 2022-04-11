@@ -1,9 +1,9 @@
 from django.contrib import admin
 
-from .models import User
+from .models import Participant
 
 
-class UserAdmin(admin.ModelAdmin):
+class ParticipantAdmin(admin.ModelAdmin):
     exclude = ["password"]
     list_display = [
         "zeal_id",
@@ -24,9 +24,9 @@ class UserAdmin(admin.ModelAdmin):
     actions = ["generate_zeal_id"]
 
     def generate_zeal_id(self, request, queryset):
-        for user in queryset:
-            user.generate_zeal_id()
-            user.save()
+        for participant in queryset:
+            participant.generate_zeal_id()
+            participant.save()
 
 
-admin.site.register(User, UserAdmin)
+admin.site.register(Participant, ParticipantAdmin)

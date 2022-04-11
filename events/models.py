@@ -1,11 +1,11 @@
 from django.db import models
-from account.models import User
+from account.models import Participant
 
 
 class Society(models.Model):
     name = models.CharField(max_length=64)
     short_form = models.CharField(max_length=16)
-    contact = models.ForeignKey(User, on_delete=models.CASCADE)
+    contact = models.ForeignKey(Participant, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -52,7 +52,7 @@ class Event(models.Model):
     society = models.ForeignKey(Society, on_delete=models.CASCADE)
     datetime = models.DateTimeField()
     duration = models.DurationField()
-    contact = models.ForeignKey(User, on_delete=models.CASCADE)
+    contact = models.ForeignKey(Participant, on_delete=models.CASCADE)
     venue = models.ForeignKey(Venue, on_delete=models.CASCADE)
     description = models.TextField(max_length=2048)
     rules = models.TextField(max_length=1024)

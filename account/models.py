@@ -5,7 +5,7 @@ from django.utils import timezone
 from .validators import validate_contact_number
 
 
-class User(models.Model):
+class Participant(models.Model):
     email = models.EmailField(unique=True)
     date_joined = models.DateTimeField(default=timezone.now)
     zeal_id = models.CharField(max_length=16, blank=True, null=True)
@@ -18,7 +18,7 @@ class User(models.Model):
 
     def generate_zeal_id(self):
         generated_zeal_id = "Zeal-ID-" + f"{randint(0, 9999):04}"
-        while User.objects.filter(zeal_id=generated_zeal_id).exists():
+        while Participant.objects.filter(zeal_id=generated_zeal_id).exists():
             generated_zeal_id = "Zeal-ID-" + f"{randint(0, 9999):04}"
         self.zeal_id = generated_zeal_id
 
