@@ -1,6 +1,7 @@
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
-from account.models import Participant
-from events.models import Event, Society, Venue
+from events.models import Event, Society, Venue, EventRegistration
+from account.models import User
+from account.serializers import ParticipantSerializer, UserDetailsSerializer
 
 
 class SocietySerializer(ModelSerializer):
@@ -16,9 +17,11 @@ class VenueSerializer(ModelSerializer):
 
 
 class ContactSerializer(ModelSerializer):
+    userdetails = UserDetailsSerializer()
+
     class Meta:
-        model = Participant
-        fields = ("fullname", "contact_no")
+        model = User
+        fields = ("first_name", "last_name", "userdetails")
 
 
 class EventSerializer(ModelSerializer):
@@ -38,4 +41,13 @@ class EventSerializer(ModelSerializer):
 
     class Meta:
         model = Event
+        fields = "__all__"
+
+
+class EventRegistrationSerializer(ModelSerializer):
+    participant = ParticipantSerializer()
+    event = EventSerializer()
+
+    class Meta:
+        model = EventRegistration
         fields = "__all__"

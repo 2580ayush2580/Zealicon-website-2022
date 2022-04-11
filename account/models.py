@@ -8,7 +8,9 @@ from .validators import validate_contact_number
 
 
 class UserDetails(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE, related_name="userdetails"
+    )
     contact_no = models.CharField(
         max_length=10, unique=True, validators=[validate_contact_number]
     )
