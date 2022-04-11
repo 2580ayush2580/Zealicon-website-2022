@@ -9,7 +9,7 @@ import SponsorItem from "../../components/SponsorItem";
 
 export default function Sponsors() {
   return (
-    <div id="sponsor" className="fullscreen sponsor p-100">
+    <div id="sponsor" className="sponsor p-100">
       <div className="font-bold text-secondaryColor font-36 text-center">
         Some of our SPONSORS
       </div>

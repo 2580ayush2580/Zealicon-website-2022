@@ -67,8 +67,7 @@
   list-style: none;
 }
 .ZealiconLogo {
-  height: 94px;
-  width: 108px;
+  height: 160px;
 }
 .navbar-btn {
   /* background-color: #7f3cb4 ; */
@@ -99,7 +98,25 @@
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 992px) {
+  .homeNavbar-sm-hidden {
+    display: none;
+    margin: 0 !important;
+    max-width: 100%;
+  }
+  .navbar-bg {
+    background: #362865 !important;
+  }
+  .custom-navbar {
+    width: 100% !important;
+  }
+  .navbar-nav {
+    align-items: flex-start !important;
+    margin-left: 20px;
+  }
+  .ZealiconLogo {
+    height: 108px;
+  }
   .homeNavbar {
     max-width: 100%;
   }
@@ -122,24 +139,6 @@
   }
   .mainShowcase-heading {
     top: 180px;
-  }
-}
-
-@media only screen and (max-width: 992px) {
-  .homeNavbar-sm-hidden {
-    display: none;
-    margin: 0 !important;
-    max-width: 100%;
-  }
-  .navbar-bg {
-    background: #362865 !important;
-  }
-  .custom-navbar {
-    width: 100% !important;
-  }
-  .navbar-nav {
-    align-items: flex-start !important;
-    margin-left: 20px;
   }
 }
 @media only screen and (max-width: 460px) {
