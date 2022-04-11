@@ -14,6 +14,9 @@ import Team11 from "../../../src/assets/team/team-11.png";
 import Team12 from "../../../src/assets/team/team-12.png";
 import Team14 from "../../../src/assets/team/team-13.png";
 import Team13 from "../../../src/assets/team/team-14.png";
+import Team15 from "../../../src/assets/team/team-15.png";
+import Team16 from "../../../src/assets/team/team-16.png";
+
 
 export default function Team() {
   const name = ["Name"];
@@ -31,29 +34,29 @@ export default function Team() {
             </div>
           </div>
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <img src={Team11} alt="img" className={`team-member`} />
+            <img src={Team8} alt="img" className={`team-member`} />
             <div className='mt-4 text-white font-18 text-center'>
-              <div className='font-bold'>{name}</div>
-              <div className='font-demi'>{designation}</div>
+              <div className='font-bold'>{'Nitin'}</div>
+              <div className='font-demi'>{'Co-Fest Secretary'}</div>
             </div>
           </div>
         </div>
 
         <div class="row gy-5 mt-0">
           <TeamMember
-            img={Team8}
+            img={Team16}
             name={"Varun"}
-            designation={designation}
+            designation={'Resource Head'}
           />
           <TeamMember
             img={Team6}
-            name={name}
-            designation={designation}
+            name={'Abhay Pandey'}
+            designation={'Co-Security Head'}
           />
           <TeamMember
             img={Team5}
-            name={"Pratik"}
-            designation={designation}
+            name={"Prateek"}
+            designation={'Security Head'}
           />
           <TeamMember
             img={Team2}
@@ -61,34 +64,34 @@ export default function Team() {
             designation={"Management Head"}
           />
           <TeamMember
-            img={Team4}
-            name={name}
-            designation={designation}
+            img={Team9}
+            name={'Ayushman Tripathi'}
+            designation={'Management Head'}
           />
           <TeamMember
-            img={Team9}
-            name={name}
-            designation={designation}
+            img={Team4}
+            name={'Divisha'}
+            designation={'Creative Head'}
           />
           <TeamMember
             img={Team7}
-            name={name}
-            designation={designation}
+            name={'Dheeraj Kotwani'}
+            designation={'Technical Head'}
           />
           <TeamMember
-            img={Team3}
-            name={name}
-            designation={designation}
+            img={Team11}
+            name={'Devansh Agarwal'}
+            designation={'Cultural Head'}
           />
           <TeamMember
             img={Team10}
-            name={name}
-            designation={designation}
+            name={'Shashank Rathor'}
+            designation={'Marketing Head'}
           />
           <TeamMember
             img={Team14}
             name={"Hemant"}
-            designation={"Decoration Head"}
+            designation={"Photography Head"}
           />
           <TeamMember
             img={Team12}
@@ -100,6 +103,16 @@ export default function Team() {
             name={"Prince"}
             designation={"Merchandise Head"}
           />
+          <TeamMember
+            img={Team15}
+            name={"Prince"}
+            designation={"Merchandise Head"}
+          />
+          {/* <TeamMember
+            img={Team16}
+            name={"Prince"}
+            designation={"Merchandise Head"}
+          /> */}
         </div>
       </div>
     </div>

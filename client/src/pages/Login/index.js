@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-// import { LoginUser } from "../../redux/actions/auth";
-import { loginZeal } from "../../redux/api";
+import { fetchZealID, loginZeal } from "../../redux/api";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import ZealiconLogo from "../../assets/image/zealicon-logo.svg";
 
 export default function Login() {
-  const dispatch = useDispatch();
   let history = useNavigate();
 
   const initialState = {
     query: "",
-    // password: "",
   };
+
   const [user, setUser] = useState(initialState);
 
   const handleChange = (e) => {
@@ -22,33 +21,57 @@ export default function Login() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("email", user.email);
-    // formData.append("password", user.password);
-    loginZeal(formData).then((res) => {
-      setUser(initialState);
-      history("/user");
-      console.log(res);
-    });
+    let result = await fetchZealID(user.query)
+    console.log(result)
+    if(result){
+      history('/user')
+    }
   };
 
   return (
-    <div className="fullscreen login p-100 d-flex justify-content-center align-items-center text-white font-48">
+    <div className="login ">
+      <Navbar
+        className="navbar-bg navbar-dark custom-navbar"
+        bg="light"
+        expand="lg"
+      >
+        <Container>
+          <Navbar.Brand href="/" className="mr-auto">
+            <img className="ZealiconLogo" src={ZealiconLogo} alt="Zealicon" />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            {/* <Nav className="me-auto">
+              <Nav.Link href="/events">
+                <span className="navbar-text font-demi"></span>
+              </Nav.Link>
+            </Nav> */}
+              <Nav>
+                <Nav.Link href="/events" className="d-flex justify-content-end w-100">
+                  <Link className="text-decoration-none" to='/login'>
+                    <span className="font-regular font-18"><span className="text-nameColor">Already Registered?</span><span className="navbar-text font-demi">&nbsp;Sign in</span></span> 
+                  </Link>
+                </Nav.Link>
+              </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <div className="nav-fullscreen p-100 d-flex justify-content-center align-items-center text-white font-48">
       <div className="form-bg">
         <div className="font-bold font-30 text-white">Sign in</div>
         <form onSubmit={handleSubmit}>
           <div className="d-flex flex-column">
             <div className="font-regular font-16 text-labelColor mt-3">
-              Email
+              Email / Phone / Admission No
             </div>
             <input
               onChange={handleChange}
-              name="email"
+              name="query"
               className="input-container font-regular font-14 text-white mt-1"
-              type={"email"}
-              placeholder={"John.snow@gmail.com"}
+              type={"text"}
+              placeholder={"Xyz..."}
             />
           </div>
           <div className="d-flex justify-content-center">
@@ -61,5 +84,7 @@ export default function Login() {
         </form>
       </div>
     </div>
+    </div>
+    
   );
 }
