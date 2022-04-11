@@ -2,6 +2,13 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import About1 from "../../assets/image/about1.jpg";
 import About2 from "../../assets/image/about2.jpg";
+import About3 from "../../assets/image/about3.jpg";
+import About4 from "../../assets/image/about4.jpg";
+import About6 from "../../assets/image/about6.jpg";
+import About7 from "../../assets/image/about7.jpg";
+import About8 from "../../assets/image/about8.jpg";
+import About9 from "../../assets/image/about9.jpg";
+import About10 from "../../assets/image/about10.jpg";
 export default function About() {
   return (
     <div id="about" className="about">
@@ -50,9 +57,64 @@ export default function About() {
                 <img
                   className="d-block aboutImage"
                   src={About2}
+                  alt="First slide"
+                />
+                <Carousel.Caption></Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block aboutImage"
+                  src={About3}
+                  alt="First slide"
+                />
+                <Carousel.Caption></Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block aboutImage"
+                  src={About4}
                   alt="Second slide"
                 />
-
+                <Carousel.Caption></Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block aboutImage"
+                  src={About6}
+                  alt="Second slide"
+                />
+                <Carousel.Caption></Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block aboutImage"
+                  src={About7}
+                  alt="Second slide"
+                />
+                <Carousel.Caption></Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block aboutImage"
+                  src={About8}
+                  alt="Second slide"
+                />
+                <Carousel.Caption></Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block aboutImage"
+                  src={About9}
+                  alt="Second slide"
+                />
+                <Carousel.Caption></Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block aboutImage"
+                  src={About10}
+                  alt="Second slide"
+                />
                 <Carousel.Caption></Carousel.Caption>
               </Carousel.Item>
             </Carousel>
