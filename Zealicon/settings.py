@@ -35,6 +35,8 @@ ALLOWED_HOSTS = ["localhost", os.environ["SERVER_HOST"]]
 
 DOMAIN = os.environ["FRONTEND_HOST"]
 
+CSRF_TRUSTED_ORIGINS = ["https://*." + DOMAIN, "http://*." + DOMAIN]
+
 SITE_NAME = "Zealicon"
 
 
