@@ -17,7 +17,7 @@ class UserViewSet(ViewSet):
         return Response(serializer.errors)
 
     def retrieve(self, request, pk=None):
-        query = request.data.get("query")
+        query = request.query_params.get("query")
         user = "User not found"
         if query:
             user = parse_user(query)

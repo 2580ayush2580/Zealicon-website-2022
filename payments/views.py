@@ -11,7 +11,7 @@ from rest_framework.views import APIView
 # REST View
 class Payment(APIView):
     def get(self, request, format=None):
-        query = request.data.get("user_identity")
+        query = request.query_params.get("user_identity")
         user = parse_user(query)
 
         if user:
