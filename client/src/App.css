@@ -232,7 +232,7 @@ body {
 }
 
 .nav-fullscreen {
-  min-height: calc( 100vh - 120px ) !important;
+  min-height: calc(100vh - 120px) !important;
 }
 
 .team-member {
@@ -269,6 +269,9 @@ body {
   width: 100vw;
 }
 
+.about-wrapper {
+  background-color: rgb(255, 255, 255, 0.5);
+}
 .about {
   background: url("../src/assets/bg/about-bg.svg");
   background-position: center;
@@ -320,7 +323,7 @@ body {
   border-radius: 13.47px;
 }
 
-.box-img{
+.box-img {
   width: 75px !important;
   height: 75px !important;
 }
@@ -407,11 +410,11 @@ body {
 }
 .about-content-right {
   width: 50%;
-  padding: 10px;
+  padding: 30px;
 }
 .about-content-left {
   width: 50%;
-  padding: 10px;
+  padding: 30px;
 }
 @media screen and (max-width: 992px) {
   .about {
@@ -422,7 +425,7 @@ body {
   }
 }
 
-.flex-end{
+.flex-end {
   display: flex;
   justify-content: flex-end !important;
 }
@@ -435,6 +438,7 @@ body {
   .about-content-right {
     width: 100%;
     padding: 10px;
+    border-radius: 10px;
   }
   .about-content-left {
     width: 100%;
