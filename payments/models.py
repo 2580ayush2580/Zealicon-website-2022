@@ -4,7 +4,6 @@ from django.utils import timezone
 
 
 class Order(models.Model):
-    user = models.ForeignKey(User, related_name="user", on_delete=models.CASCADE)
     order_id = models.CharField(unique=True, max_length=32)
     entity = models.CharField(max_length=32)
     amount = models.CharField(max_length=8)

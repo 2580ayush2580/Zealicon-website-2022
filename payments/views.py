@@ -1,6 +1,7 @@
 import os
 from rest_framework.response import Response
 from account.utils import parse_user
+from account.serializers import UserSerializer
 from payments.models import Order
 from payments.razorpay_utils import payment_order, verify_payment
 
@@ -11,20 +12,14 @@ from rest_framework.views import APIView
 # REST View
 class Payment(APIView):
     def get(self, request, format=None):
-        query = request.query_params.get("user_identity")
-        user = parse_user(query)
-
-        if user:
-            order_data, order_id = payment_order(user)
-            context = {
-                "key_id": os.environ.get("KEY_ID"),
-                "order_id": order_data["id"],
-                "amount": order_data["amount"],
-                "server_order_id": order_id,
-            }
-            return Response(context)
-        else:
-            return Response({"message": "User not found"})
+        order_data, order_id = payment_order()
+        context = {
+            "key_id": os.environ.get("KEY_ID"),
+            "order_id": order_data["id"],
+            "amount": order_data["amount"],
+            "server_order_id": order_id,
+        }
+        return Response(context)
 
     def post(self, request, format=None):
         if verify_payment(request.data):
@@ -35,11 +30,14 @@ class Payment(APIView):
             order.attempts = str(int(order.attempts) + 1)
             order.save()
 
-            user = order.user
-            if not user.zeal_id:
-                user.generate_zeal_id()
-            user.save()
-
-            return Response({"status": "Payment Successful"})
+            serializer = UserSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                user = serializer.instance
+                if not user.zeal_id:
+                    user.generate_zeal_id()
+                user.save()
+                return Response(serializer.data)
+            return Response(serializer.errors)
         else:
-            return Response({"status": "Payment Failed"})
+            return Response({"status": "Payment Not Valid!"})

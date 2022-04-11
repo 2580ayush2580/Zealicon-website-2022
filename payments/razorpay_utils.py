@@ -30,14 +30,13 @@ def hmac_sha256(data: str, key: str):
     return hmac.new(key.encode(), data.encode(), hashlib.sha256).hexdigest()
 
 
-def payment_order(user):
+def payment_order():
     receipt_id = unique_order_id_generator(Order)
     fee_amount = int(os.environ.get("FEE_AMOUNT"))
     data = {"amount": fee_amount * 100, "currency": "INR", "receipt": receipt_id}
     payment = client.order.create(data=data)
     print(payment)
     Order.objects.create(
-        user=user,
         order_id=receipt_id,
         entity=payment["entity"],
         amount=str(payment["amount"]),

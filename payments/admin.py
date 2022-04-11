@@ -4,7 +4,6 @@ from .models import Order
 
 class OrderAdmin(admin.ModelAdmin):
     list_display = (
-        "user",
         "order_id",
         "amount_paid",
         "amount_due",
