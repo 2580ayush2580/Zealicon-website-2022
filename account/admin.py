@@ -22,6 +22,7 @@ class ParticipantAdmin(admin.ModelAdmin):
         "college",
     ]
     actions = ["generate_zeal_id"]
+    readonly_fields = ["zeal_id"]
 
     def generate_zeal_id(self, request, queryset):
         for participant in queryset:
