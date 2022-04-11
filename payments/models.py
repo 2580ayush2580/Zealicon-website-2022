@@ -17,4 +17,4 @@ class Order(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.user.fullname + " - " + self.order_id
+        return self.order_id
