@@ -24,8 +24,9 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let result = await fetchZealID(user.query)
-    console.log(result)
-    if(result){
+    if(!result.zeal_id){
+      history('/register')
+    } else {
       history('/user')
     }
   };
@@ -50,8 +51,8 @@ export default function Login() {
             </Nav> */}
               <Nav>
                 <Nav.Link href="/events" className="d-flex justify-content-end w-100">
-                  <Link className="text-decoration-none" to='/login'>
-                    <span className="font-regular font-18"><span className="text-nameColor">Already Registered?</span><span className="navbar-text font-demi">&nbsp;Sign in</span></span> 
+                  <Link className="text-decoration-none" to='/register'>
+                    <span className="font-regular font-18"><span className="text-nameColor">New Here?</span><span className="navbar-text font-demi">&nbsp;Register Now</span></span> 
                   </Link>
                 </Nav.Link>
               </Nav>

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { RegisterUser } from "../../redux/actions/auth";
 import { generateOrder, login, makePayment, register } from "../../redux/api";
+import { Link } from "react-router-dom";
+import ZealiconLogo from "../../assets/image/zealicon-logo.svg";
 
 export default function Signup() {
   const initialData = {
@@ -123,7 +126,34 @@ export default function Signup() {
   };
 
   return (
-    <div className="fullscreen login d-flex justify-content-center align-items-center text-white font-48">
+    <div className="login">
+    <Navbar
+        className="navbar-bg navbar-dark custom-navbar"
+        bg="light"
+        expand="lg"
+      >
+        <Container>
+          <Navbar.Brand href="/" className="mr-auto">
+            <img className="ZealiconLogo" src={ZealiconLogo} alt="Zealicon" />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            {/* <Nav className="me-auto">
+              <Nav.Link href="/events">
+                <span className="navbar-text font-demi"></span>
+              </Nav.Link>
+            </Nav> */}
+              <Nav>
+                <Nav.Link href="/events" className="d-flex justify-content-end w-100">
+                  <Link className="text-decoration-none" to='/login'>
+                    <span className="font-regular font-18"><span className="text-nameColor">Already Registered?</span><span className="navbar-text font-demi">&nbsp;Sign In</span></span> 
+                  </Link>
+                </Nav.Link>
+              </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    <div className="nav-fullscreen  d-flex justify-content-center align-items-center text-white font-48">
       <div className="form-bg">
         <div className="font-regular font-16 text-white">Welcome</div>
         <div className="font-bold font-30 text-white">Register now</div>
@@ -197,6 +227,7 @@ export default function Signup() {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 }

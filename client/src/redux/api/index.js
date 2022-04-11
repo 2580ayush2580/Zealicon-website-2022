@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "https://zealicon.pythonanywhere.com";
+const url = "https://api.zealicon.in";
 
 export const register = async (formData) => {
   const { data } = await axios({

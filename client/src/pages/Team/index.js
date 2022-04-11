@@ -24,7 +24,7 @@ export default function Team() {
   return (
     <div id="team" className="fullscreen team p-100">
       <div className="font-bold font-36 text-white text-center">TEAM</div>
-      <div className="my-5 px-5 container">
+      <div className="my-5 px-0 container">
         <div class="row justify-content-center row-cols-lg-4 row-cols-sm-2 row-cols-1 gy-4">
           <div className="d-flex flex-column justify-content-center align-items-center">
             <img src={Team1} alt="img" className={`team-member`} />
@@ -49,14 +49,19 @@ export default function Team() {
             designation={'Resource Head'}
           />
           <TeamMember
-            img={Team6}
-            name={'Abhay Pandey'}
-            designation={'Co-Security Head'}
+            img={Team7}
+            name={'Dheeraj Kotwani'}
+            designation={'Technical Head'}
           />
           <TeamMember
             img={Team5}
             name={"Prateek"}
             designation={'Security Head'}
+          />
+          <TeamMember
+            img={Team6}
+            name={'Abhay Pandey'}
+            designation={'Co-Security Head'}
           />
           <TeamMember
             img={Team2}
@@ -72,11 +77,6 @@ export default function Team() {
             img={Team4}
             name={'Divisha'}
             designation={'Creative Head'}
-          />
-          <TeamMember
-            img={Team7}
-            name={'Dheeraj Kotwani'}
-            designation={'Technical Head'}
           />
           <TeamMember
             img={Team11}
