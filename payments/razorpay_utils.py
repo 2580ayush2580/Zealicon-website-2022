@@ -39,9 +39,9 @@ def payment_order():
     Order.objects.create(
         order_id=receipt_id,
         entity=payment["entity"],
-        amount=str(payment["amount"]),
-        amount_paid=str(payment["amount_paid"]),
-        amount_due=str(payment["amount_due"]),
+        amount=str(payment["amount"] / 100),
+        amount_paid=str(payment["amount_paid"] / 100),
+        amount_due=str(payment["amount_due"] / 100),
         currency=payment["currency"],
         receipt=payment["receipt"],
         offer_id=payment["offer_id"],
