@@ -56,6 +56,8 @@ class EventRegistrationViewSet(ReadOnlyModelViewSet):
         )
         if not already_registered:
             EventRegistration.objects.create(event=event, participant=participant)
-            return Response({"message": "Successfully registered for event"})
+            return Response(
+                {"message": "Successfully registered for event"}, status=201
+            )
         else:
             return Response({"message": "Already registered for event"})

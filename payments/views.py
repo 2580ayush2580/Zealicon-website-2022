@@ -18,10 +18,10 @@ class Payment(APIView):
             "amount": order_data["amount"],
             "server_order_id": order_id,
         }
-        return Response(context)
+        return Response(context, status=201)
 
     def post(self, request, format=None):
-        if verify_payment(request.data) or True:
+        if verify_payment(request.data):
             order = Order.objects.get(order_id=request.data.get("server_order_id"))
             order.amount_paid = order.amount_due
             order.amount_due = "0.0"
@@ -36,7 +36,7 @@ class Payment(APIView):
                 if not participant.zeal_id:
                     participant.generate_zeal_id()
                 participant.save()
-                return Response(serializer.data)
-            return Response(serializer.errors)
+                return Response(serializer.data, status=201)
+            return Response(serializer.errors, status=400)
         else:
-            return Response({"status": "Payment Not Valid!"})
+            return Response({"status": "Payment Not Valid!"}, status=402)

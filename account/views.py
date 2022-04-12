@@ -22,4 +22,4 @@ class UserViewSet(ViewSet):
         if serialized_data.is_valid():
             return Response({"message": "User details are valid"})
         else:
-            return Response(serialized_data.errors)
+            return Response(serialized_data.errors, status=400)
