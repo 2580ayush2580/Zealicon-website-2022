@@ -30,6 +30,8 @@ class Participant(models.Model):
     contact_no = models.CharField(
         max_length=10, unique=True, validators=[validate_contact_number]
     )
+    coupon_collected = models.BooleanField(default=False)
+    coupon_used = models.BooleanField(default=False)
 
     def generate_zeal_id(self):
         generated_zeal_id = "Zeal-ID-" + f"{randint(0, 9999):04}"
