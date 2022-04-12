@@ -78,6 +78,23 @@ export const makePayment = async (formData) => {
   }
 }
 
+export const handleFeildsCheck = async (query) => {
+  const {admission_no, email, college, fullname, contact_no} = query
+  try {
+    const { data } = await axios({
+      method: "GET",
+      url: `${url}/accounts/validate_user_details/?admission_no=${admission_no}&email=${email}&fullname=${fullname}&college=${college}&contact_no=${contact_no}`,
+      headers: {
+        "Content-Type": `application/json`,
+      }
+    })
+    return data;
+  } catch (error) {
+    let obj = error.response.data;
+    return Object.entries(obj)[0];
+  }
+}
+
 export const fetchZealID = async (query) => {
   console.log(query)
   try {

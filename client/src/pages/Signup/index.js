@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { RegisterUser } from "../../redux/actions/auth";
-import { generateOrder, login, makePayment, register } from "../../redux/api";
+import { generateOrder, handleFeildsCheck, makePayment } from "../../redux/api";
 import { Link } from "react-router-dom";
 import ZealiconLogo from "../../assets/image/zealicon-logo.svg";
 import validator from "validator";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+toast.configure()
 export default function Signup() {
   const initialData = {
     full_name: "",
@@ -92,7 +94,15 @@ export default function Signup() {
           history("/user");
         } else {
           history("/register");
-          alert("Payment Failed");
+          toast.dark("Payment Failed", {
+            position: "bottom-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
         }
       },
       theme: {
@@ -103,9 +113,11 @@ export default function Signup() {
 
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
-
-    history("/user");
   }
+
+  // const handleFeildsCheck = async () => {
+  //   displayRazorpay();
+  // }
 
   const handleSubmit = async(e) => {
     e.preventDefault();
@@ -114,7 +126,30 @@ export default function Signup() {
         validator.isMobilePhone(user.contact_no) &&
         user.contact_no.length === 10
       ) {
-        displayRazorpay();
+        let handler = await handleFeildsCheck(user)
+        if(handler.message){
+          toast.dark("Do not refresh while paying", {
+            position: "bottom-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+          setTimeout(() => {
+            displayRazorpay();
+          }, 3000)
+        }
+        toast.dark(`${handler[1][0]}`, {
+          position: "bottom-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
       } else {
         alert("Enter valid Contact!");
       }

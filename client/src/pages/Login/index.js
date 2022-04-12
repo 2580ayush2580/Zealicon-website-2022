@@ -4,6 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { fetchZealID, loginZeal } from "../../redux/api";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import ZealiconLogo from "../../assets/image/zealicon-logo.svg";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.configure()
+
 
 export default function Login() {
   let history = useNavigate();
@@ -30,7 +35,16 @@ export default function Login() {
     e.preventDefault();
     let result = await fetchZealID(user.query)
     if(!result.zeal_id){
-      history('/register')
+      history('/login')
+      toast.dark(`${result.message}`, {
+        position: "bottom-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } else {
       history('/user')
     }
