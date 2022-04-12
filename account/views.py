@@ -13,5 +13,4 @@ class UserViewSet(ViewSet):
             if participant:
                 serializer = ParticipantSerializer(participant)
                 return Response(serializer.data)
-        else:
-            return Response({"message": "User not found"})
+        return Response({"message": "User not found"})
