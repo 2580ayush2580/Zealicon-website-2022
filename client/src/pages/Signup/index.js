@@ -16,6 +16,10 @@ export default function Signup() {
     college: "",
   };
 
+  if(localStorage.getItem("admission_number")){
+    localStorage.clear()
+  }
+
   const [user, setUser] = useState(initialData);
 
   const handleChange = (e) => {
@@ -103,7 +107,7 @@ export default function Signup() {
     history("/user");
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     if (validator.isEmail(user.email)) {
       if (
@@ -139,7 +143,7 @@ export default function Signup() {
   return (
     <div className="login">
       <Navbar
-        className="navbar-bg navbar-dark custom-navbar"
+        className="navbar-bg navbar-dark custom-navbar navbar-height"
         bg="light"
         expand="lg"
       >
@@ -149,11 +153,6 @@ export default function Signup() {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            {/* <Nav className="me-auto">
-              <Nav.Link href="/events">
-                <span className="navbar-text font-demi"></span>
-              </Nav.Link>
-            </Nav> */}
             <Nav>
               <Nav.Link
                 href="/events"
@@ -170,71 +169,71 @@ export default function Signup() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div className="nav-fullscreen  d-flex justify-content-center align-items-center text-white font-48">
-        <div className="form-bg">
-          <div className="font-regular font-16 text-white">Welcome</div>
-          <div className="font-bold font-30 text-white">Register now</div>
-          <form onSubmit={handleSubmit}>
-            <div className="d-flex flex-column">
-              <div className="font-regular font-16 text-labelColor mt-4">
-                Full name
-              </div>
-              <input
-                onChange={handleChange}
-                name="full_name"
-                className="input-container font-regular font-14 text-white mt-1"
-                type={"text"}
-                placeholder={"John"}
-              />
+    <div className="nav-fullscreen d-flex justify-content-center align-items-center text-white font-48">
+      <div className="form-bg">
+        <div className="font-regular font-16 text-white">Welcome</div>
+        <div className="font-bold font-30 text-white">Register now</div>
+        <form onSubmit={handleSubmit}>
+          <div className="d-flex flex-column">
+            <div className="font-regular font-16 text-labelColor mt-4">
+              Full name
             </div>
-            <div className="d-flex flex-column">
-              <div className="font-regular font-16 text-labelColor mt-3">
-                Phone
-              </div>
-              <input
-                onChange={handleChange}
-                name="contact_no"
-                className="input-container font-regular font-14 text-white mt-1"
-                type={"text"}
-                placeholder="8923xx2234"
-              />
+            <input
+              onChange={handleChange}
+              name="full_name"
+              className="input-container font-regular font-14 text-white mt-1"
+              type={"text"}
+              placeholder={"John"}
+            />
+          </div>
+          <div className="d-flex flex-column">
+            <div className="font-regular font-16 text-labelColor mt-2">
+              Phone
             </div>
-            <div className="d-flex flex-column">
-              <div className="font-regular font-16 text-labelColor mt-3">
-                Email
-              </div>
-              <input
-                onChange={handleChange}
-                name="email"
-                className="input-container font-regular font-14 text-white mt-1"
-                type={"email"}
-                placeholder="John.snow@gmail.com."
-              />
+            <input
+              onChange={handleChange}
+              name="contact_no"
+              className="input-container font-regular font-14 text-white mt-1"
+              type={"text"}
+              placeholder="8923xx2234"
+            />
+          </div>
+          <div className="d-flex flex-column">
+            <div className="font-regular font-16 text-labelColor mt-2">
+              Email
             </div>
-            <div className="d-flex flex-column">
-              <div className="font-regular font-16 text-labelColor mt-3">
-                College
-              </div>
-              <input
-                onChange={handleChange}
-                name="college"
-                className="input-container font-regular font-14 text-white mt-1"
-                type={"text"}
-                placeholder="JSSATE Noida"
-              />
+            <input
+              onChange={handleChange}
+              name="email"
+              className="input-container font-regular font-14 text-white mt-1"
+              type={"email"}
+              placeholder="John.snow@gmail.com."
+            />
+          </div>
+          <div className="d-flex flex-column">
+            <div className="font-regular font-16 text-labelColor mt-2">
+              College
             </div>
-            <div className="d-flex flex-column">
-              <div className="font-regular font-16 text-labelColor mt-3">
-                Admission Number
-              </div>
-              <input
-                onChange={handleChange}
-                name="admission_no"
-                className="input-container font-regular font-14 text-white mt-1"
-                type={"text"}
-                placeholder="ex: 19CSE001"
-              />
+            <input
+              onChange={handleChange}
+              name="college"
+              className="input-container font-regular font-14 text-white mt-1"
+              type={"text"}
+              placeholder="JSSATE Noida"
+            />
+          </div>
+          <div className="d-flex flex-column">
+            <div className="font-regular font-16 text-labelColor mt-2">
+              Admission Number
             </div>
+            <input
+              onChange={handleChange}
+              name="admission_no"
+              className="input-container font-regular font-14 text-white mt-1"
+              type={"text"}
+              placeholder="19IT012"
+            />
+          </div>
             <div className="d-flex justify-content-center">
               <input
                 className="input-btn mt-5 font-bold text-white font-18"

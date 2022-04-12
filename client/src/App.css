@@ -65,8 +65,14 @@
 .font-36 {
   font-size: 36px;
 }
+.font-44 {
+  font-size: 44px;
+}
 .font-48 {
   font-size: 48px;
+}
+.font-56 {
+  font-size: 56px;
 }
 .font-68 {
   font-size: 68px;
@@ -232,13 +238,15 @@ body {
 }
 
 .nav-fullscreen {
-  min-height: calc(100vh - 120px) !important;
+  min-height: calc(100vh - 190px) !important;
+}
+
+.navbar-height{
+  height: 160px;
 }
 
 .team-member {
   border-radius: 48px;
-  /* width: 291px;
-  height: 291px; */
 }
 
 .default {

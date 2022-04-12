@@ -16,6 +16,9 @@ import Team14 from "../../../src/assets/team/team-13.png";
 import Team13 from "../../../src/assets/team/team-14.png";
 import Team15 from "../../../src/assets/team/team-15.png";
 import Team16 from "../../../src/assets/team/team-16.png";
+import Team17 from "../../../src/assets/team/team-17.png";
+import Team18 from "../../../src/assets/team/team-18.png";
+import Team19 from "../../../src/assets/team/team-19.png";
 
 
 export default function Team() {
@@ -105,14 +108,24 @@ export default function Team() {
           />
           <TeamMember
             img={Team15}
-            name={"Prince"}
+            name={"Ajitesh Tripathi"}
+            designation={"Artist Head"}
+          />
+          <TeamMember
+            img={Team17}
+            name={"Abhay Singh Bhadauria"}
+            designation={"Finance Head"}
+          />
+          <TeamMember
+            img={Team18}
+            name={"Priyanshu Singh"}
+            designation={"Production Head"}
+          />
+          <TeamMember
+            img={Team19}
+            name={"Aditya"}
             designation={"Merchandise Head"}
           />
-          {/* <TeamMember
-            img={Team16}
-            name={"Prince"}
-            designation={"Merchandise Head"}
-          /> */}
         </div>
       </div>
     </div>

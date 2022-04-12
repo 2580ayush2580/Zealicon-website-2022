@@ -6,8 +6,11 @@ import ZealiconLogo from "../../assets/image/zealicon-logo.svg";
 import { Link } from "react-router-dom";
 
 export default function ZealIDPage() {
+  if(localStorage.getItem("admission_number")){
+    localStorage.clear()
+  }
   return (
-    <div className="login">
+    <div className="team">
     <Navbar
         className="navbar-bg navbar-dark custom-navbar"
         bg="light"
@@ -19,13 +22,8 @@ export default function ZealIDPage() {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            {/* <Nav className="me-auto">
-              <Nav.Link href="/events">
-                <span className="navbar-text font-demi"></span>
-              </Nav.Link>
-            </Nav> */}
               <Nav>
-                <Nav.Link href="/events" className="d-flex justify-content-end w-100">
+                <Nav.Link href="/events" className="d-flex justify-content-end w-100 px-4">
                   <Link className="text-decoration-none" to='/login'>
                     <span className="font-regular font-18"><span className="text-nameColor">Already Registered?</span><span className="navbar-text font-demi">&nbsp;Sign in</span></span> 
                   </Link>

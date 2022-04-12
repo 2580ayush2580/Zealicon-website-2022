@@ -15,25 +15,34 @@ export default function UserPage() {
     })
 
 
+    useEffect(() => {
+      let admission_no = localStorage.getItem('admission_number')
+      const fetch = async () => {
+          const result = await fetchZealID(admission_no)
+          if(result.zeal_id === null){
+              history('/register')
+          }
+          setDetails({
+              ...details,
+              fullname: result.fullname,
+              zeal_id: result.zeal_id
+          })
+      }
+      fetch()
+  }, [])
+
     if(!localStorage.getItem("admission_number")){
+      console.log(1)
         history('/register')
+        return;
+    }
+
+    if(localStorage.getItem("admission_number") === undefined){
+      history('/register')
+        localStorage.clear()
+        return;
     }
     
-    useEffect(() => {
-        let admission_no = localStorage.getItem('admission_number')
-        const fetch = async () => {
-            const result = await fetchZealID(admission_no)
-            if(result.zeal_id === null){
-                history('/register')
-            }
-            setDetails({
-                ...details,
-                fullname: result.fullname,
-                zeal_id: result.zeal_id
-            })
-        }
-        fetch()
-    }, [])
 
 
     const handleLogout = () => {
@@ -43,7 +52,7 @@ export default function UserPage() {
   return (
       <div className='login'>
     <Navbar
-    className="navbar-bg navbar-dark custom-navbar"
+    className="navbar-bg navbar-dark custom-navbar navbar-height"
     bg="light"
     expand="lg"
   >
@@ -53,11 +62,6 @@ export default function UserPage() {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        {/* <Nav className="me-auto">
-          <Nav.Link href="/events">
-            <span className="navbar-text font-demi"></span>
-          </Nav.Link>
-        </Nav> */}
           <Nav>
             <Nav.Link href="/events" className="d-flex justify-content-end w-100">
               <Link className="text-decoration-none" to='/login' onClick={handleLogout}>
@@ -68,13 +72,14 @@ export default function UserPage() {
       </Navbar.Collapse>
     </Container>
   </Navbar>
-    <div className="nav-fullscreen p-75 d-flex flex-column justify-content-center align-items-center text-white font-48">
-        <div className='font-bold font-48 text-nameColor'>Hey {details.fullname},</div>
-        <div className='font-bold font-68 text-white text-center justify'>Your Zealicon ID is</div>
+    <div className="nav-fullscreen d-flex flex-column justify-content-center align-items-center text-white font-48">
+        <div className='font-bold font-44 text-nameColor'>Hey {details.fullname},</div>
+        <div className='font-bold font-56 text-white text-center justify'>Your Zealicon ID is</div>
         <div className="zeal-bg mx-2 text-center">
             <div className="font-demi font-36 text-white">{details.zeal_id}</div>
         </div>
-        <div className='font-demi font-40 text-white text-center justify'>Collect your coupons from Registration Desk</div>
+        <div className='font-demi font-30 text-white text-center justify'>Collect your coupons from<br /> Registration Desk</div>
+        <div className='font-demi font-24 text-white text-center justify'>For Queries Contact:<br /> Prajwal (9667935559) , Ayushman (6388443417)</div>
         <div className='d-flex flex-md-row flex-column w-full mt-4'>
             <div className="mx-2 text-center mt-2">
                 <img src={gluedImg} alt="" className='img-fluid mx-0 coupon' />

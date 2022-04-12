@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "https://api.zealicon.in";
+const url = "https://zealicon.pythonanywhere.com";
 
 export const register = async (formData) => {
   const { data } = await axios({
@@ -89,7 +89,7 @@ export const fetchZealID = async (query) => {
       }
     })
     console.log(data);
-    if(data) localStorage.setItem("admission_number",data.email)
+    if(data.admission_no) {localStorage.setItem("admission_number",data.email)}
     return data;
   } catch (error) {
     console.log(error)

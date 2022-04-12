@@ -12,6 +12,11 @@ export default function Login() {
     query: "",
   };
 
+  if(localStorage.getItem("admission_number")){
+    localStorage.clear()
+  }
+
+
   const [user, setUser] = useState(initialState);
 
   const handleChange = (e) => {
@@ -34,7 +39,7 @@ export default function Login() {
   return (
     <div className="login ">
       <Navbar
-        className="navbar-bg navbar-dark custom-navbar"
+        className="navbar-bg navbar-dark custom-navbar navbar-height"
         bg="light"
         expand="lg"
       >
@@ -50,7 +55,7 @@ export default function Login() {
               </Nav.Link>
             </Nav> */}
               <Nav>
-                <Nav.Link href="/events" className="d-flex justify-content-end w-100">
+                <Nav.Link href="/events" className="d-flex justify-content-end w-100 px-4">
                   <Link className="text-decoration-none" to='/register'>
                     <span className="font-regular font-18"><span className="text-nameColor">New Here?</span><span className="navbar-text font-demi">&nbsp;Register Now</span></span> 
                   </Link>

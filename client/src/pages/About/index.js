@@ -32,7 +32,7 @@ export default function About() {
               technocrats.
             </p>
             <p className="mt-4 ">
-              Zealicon 2019 will cover the aspects of hysterical face of
+              Zealicon 2022 will cover the aspects of hysterical face of
               literature along with popular arts, science and technology. This
               edition of Zealicon promises all the trademarks of the earlier
               versions. A plethora of events where academicians will vouch out
@@ -40,7 +40,7 @@ export default function About() {
               Projecting the fictitious gesture onto the real world, Zealicon
               will act as a connecting link between the fantasy and reality.
               Creating an aura of avidity and togetherness, We hope that
-              Zealicon 2019 will turn out to be a memorable experience for you !
+              Zealicon 2022 will turn out to be a memorable experience for you !
             </p>
           </div>
           <div className="about-content-right">
