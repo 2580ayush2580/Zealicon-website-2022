@@ -49,8 +49,8 @@ class EventAdmin(admin.ModelAdmin):
 
 
 class EventRegistrationAdmin(admin.ModelAdmin):
-    list_display = ("event", "participant", "status", "registration_time")
-    list_filter = ("status", "event")
+    list_display = ("event", "participant", "is_active", "registration_time")
+    list_filter = ("is_active", "event")
     search_fields = ("event", "participant")
 
 
@@ -60,3 +60,4 @@ admin.site.register(Venue, VenueAdmin)
 admin.site.register(Building)
 admin.site.register(Event_Category)
 admin.site.register(Event, EventAdmin)
+admin.site.register(EventRegistration, EventRegistrationAdmin)
