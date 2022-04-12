@@ -21,7 +21,7 @@ class Payment(APIView):
         return Response(context)
 
     def post(self, request, format=None):
-        if verify_payment(request.data) or True:
+        if verify_payment(request.data):
             order = Order.objects.get(order_id=request.data.get("server_order_id"))
             order.amount_paid = order.amount_due
             order.amount_due = 0
