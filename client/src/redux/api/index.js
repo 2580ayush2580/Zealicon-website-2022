@@ -79,7 +79,9 @@ export const makePayment = async (formData) => {
 }
 
 export const handleFeildsCheck = async (query) => {
-  const {admission_no, email, college, fullname, contact_no} = query
+  let {admission_no, email, college, fullname, contact_no} = query
+  admission_no = admission_no.toUpperCase()
+  console.log(admission_no)
   try {
     const { data } = await axios({
       method: "GET",

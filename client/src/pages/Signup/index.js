@@ -84,10 +84,10 @@ export default function Signup() {
           fullname: user.full_name,
           contact_no: user.contact_no,
           college: user.college,
-          admission_no: user.admission_no,
+          admission_no: user.admission_no.toUpperCase(),
           email: user.email,
         };
-
+        console.log(data)
         const result = await makePayment(data);
         console.log("result", result);
         if (result.email) {
@@ -115,10 +115,6 @@ export default function Signup() {
     paymentObject.open();
   }
 
-  // const handleFeildsCheck = async () => {
-  //   displayRazorpay();
-  // }
-
   const handleSubmit = async(e) => {
     e.preventDefault();
     if (validator.isEmail(user.email)) {
@@ -129,7 +125,7 @@ export default function Signup() {
         let handler = await handleFeildsCheck(user)
         if(handler.message){
           toast.dark("Do not refresh while paying", {
-            position: "bottom-center",
+            position: "top-center",
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
@@ -142,7 +138,7 @@ export default function Signup() {
           }, 3000)
         }
         toast.dark(`${handler[1][0]}`, {
-          position: "bottom-center",
+          position: "top-center",
           autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -157,22 +153,6 @@ export default function Signup() {
       alert("Enter valid Email!");
     }
 
-    // const formData = new FormData();
-    // formData.append("fullname", user.full_name);
-    // formData.append("contact_no", user.contact_no);
-    // formData.append("email", user.email);
-    // formData.append("admission_no", user.admission_no);
-    // formData.append("password", user.password);
-    // formData.append("college", user.college);
-    // register(formData).then((res) => {
-    //   console.log(res)
-    //   // const loginFormData = new FormData();
-    //   // formData.append("email",user.email);
-    //   // formData.append("password",user.password);
-    //   // login(formData).then(() => {
-
-    //   // })
-    // })
   };
 
   return (

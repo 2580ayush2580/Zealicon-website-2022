@@ -37,7 +37,7 @@ export default function Login() {
     if(!result.zeal_id){
       history('/login')
       toast.dark(`${result.message}`, {
-        position: "bottom-center",
+        position: "top-center",
         autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
