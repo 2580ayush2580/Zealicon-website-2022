@@ -7,7 +7,7 @@ from account.validators import validate_contact_number
 def parse_participant(query):
     try:
         validate_email(query)
-        participant = Participant.objects.get(email=query)
+        participant = Participant.objects.get(email=query.lower())
     except Participant.DoesNotExist:
         return
     except ValidationError:
