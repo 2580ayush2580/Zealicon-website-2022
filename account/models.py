@@ -41,6 +41,7 @@ class Participant(models.Model):
 
     def save(self, *args, **kwargs):
         self.admission_no = self.admission_no.upper()
+        self.email = self.email.lower()
         super().save(*args, **kwargs)
 
     def __str__(self):
