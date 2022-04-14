@@ -20,6 +20,7 @@ import Team18 from "../../../src/assets/team/team-18.png";
 import Team19 from "../../../src/assets/team/team-19.png";
 import Team20 from "../../../src/assets/team/team-20.png";
 import Core1 from "../../../src/assets/team/core-1.png";
+import Core2 from "../../../src/assets/team/core-2.png";
 
 
 export default function Team() {
@@ -29,19 +30,19 @@ export default function Team() {
       <div className="my-5 px-0 container">
         <div class="row justify-content-center row-cols-lg-4 row-cols-sm-2 row-cols-1 gy-4">
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <img src={Core1} alt="img" className={`team-member`} />
+            <img src={Core2} alt="img" className={`team-member`} />
             <div className='mt-4 text-white font-18 text-center'>
-              <div className='font-bold'>Dr. Prashant Chauhan</div>
-              <div className='font-demi'>Convener</div>
+              <div className='font-bold'>Dr. Mamatha T G</div>
+              <div className='font-demi'>Principal</div>
             </div>
           </div>
-          {/* <div className="d-flex flex-column justify-content-center align-items-center">
+          <div className="d-flex flex-column justify-content-center align-items-center">
             <img src={Core1} alt="img" className={`team-member`} />
             <div className='mt-4 text-white font-18 text-center'>
               <div className='font-bold'>{'Dr. Prashant Chauhan'}</div>
               <div className='font-demi'>{'Convener'}</div>
             </div>
-          </div> */}
+          </div>
         </div>
 
         <div class="row gy-5 mt-0">
