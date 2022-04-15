@@ -31,8 +31,8 @@ const Home = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="/events">
-                  <span className="navbar-text font-demi">Events</span>
+                <Nav.Link href="https://play.google.com/store/apps/details?id=project.gdsc.zealicon22">
+                  <span className="navbar-text font-demi">Zealicon App</span>
                 </Nav.Link>
                 <Nav.Link href="/#about">
                   <span className="navbar-text font-demi">About</span>
