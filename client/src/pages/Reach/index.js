@@ -35,7 +35,7 @@ export default function Reach() {
                 Prajwal Shirur
               </div>
               <div className="reach-page-right-text-normalText font-bold">
-                Festival Convener
+                Festival Secretary
               </div>
               <div className="reach-page-right-text-normalText font-bold">
                 zealicon@jssaten.ac.in

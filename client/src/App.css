@@ -19,7 +19,9 @@
   src: url("../src/assets/fonts/Gilroy-Regular.ttf");
   font-display: swap;
 }
-
+.under-line {
+  border-bottom: 3px solid white;
+}
 .font-bold {
   margin: 0;
   font-family: Gilroy-bold !important;
@@ -241,7 +243,7 @@ body {
   min-height: calc(100vh - 190px) !important;
 }
 
-.navbar-height{
+.navbar-height {
   height: 160px;
 }
 

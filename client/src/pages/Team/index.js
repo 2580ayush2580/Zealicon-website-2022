@@ -2,7 +2,6 @@ import React from "react";
 import TeamMember from "../../components/TeamMember";
 import Team1 from "../../../src/assets/team/team-1.png";
 import Team2 from "../../../src/assets/team/team-2.png";
-import Team3 from "../../../src/assets/team/team-3.png";
 import Team4 from "../../../src/assets/team/team-4.png";
 import Team5 from "../../../src/assets/team/team-5.png";
 import Team6 from "../../../src/assets/team/team-6.png";
@@ -19,52 +18,67 @@ import Team16 from "../../../src/assets/team/team-16.png";
 import Team17 from "../../../src/assets/team/team-17.png";
 import Team18 from "../../../src/assets/team/team-18.png";
 import Team19 from "../../../src/assets/team/team-19.png";
-
+import Team20 from "../../../src/assets/team/team-20.png";
+import Core1 from "../../../src/assets/team/core-1.png";
+import Core2 from "../../../src/assets/team/core-2.png";
 
 export default function Team() {
-  const name = ["Name"];
-  const designation = ["Designation"];
   return (
     <div id="team" className="fullscreen team p-100">
       <div className="font-bold font-36 text-white text-center">TEAM</div>
       <div className="my-5 px-0 container">
+        <div className="font-28 font-bold d-flex justify-content-center text-center text-white mb-5">
+          <span className="under-line">Management Commitee</span>
+        </div>
         <div class="row justify-content-center row-cols-lg-4 row-cols-sm-2 row-cols-1 gy-4">
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <img src={Team1} alt="img" className={`team-member`} />
-            <div className='mt-4 text-white font-18 text-center'>
-              <div className='font-bold'>Prajwal s s</div>
-              <div className='font-demi'>Fest Secretary</div>
+            <img src={Core2} alt="img" className={`team-member`} />
+            <div className="mt-4 text-white font-18 text-center">
+              <div className="font-bold">Dr. Mamatha T G</div>
+              <div className="font-demi">Principal</div>
             </div>
           </div>
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <img src={Team8} alt="img" className={`team-member`} />
-            <div className='mt-4 text-white font-18 text-center'>
-              <div className='font-bold'>{'Nitin'}</div>
-              <div className='font-demi'>{'Co-Fest Secretary'}</div>
+            <img src={Core1} alt="img" className={`team-member`} />
+            <div className="mt-4 text-white font-18 text-center">
+              <div className="font-bold">{"Dr. Prashant Chauhan"}</div>
+              <div className="font-demi">{"Convener"}</div>
             </div>
           </div>
         </div>
-
+        <div className="font-28 font-bold d-flex justify-content-center text-center text-white mt-5 pt-4">
+          <span className="under-line">Core Team Commitee</span>
+        </div>
         <div class="row gy-5 mt-0">
+          <TeamMember
+            img={Team1}
+            name={"Prajwal s s"}
+            designation={"Fest Secretary"}
+          />
+          <TeamMember
+            img={Team8}
+            name={"Nitin"}
+            designation={"Co-Fest Secretary"}
+          />
           <TeamMember
             img={Team16}
             name={"Varun"}
-            designation={'Resource Head'}
+            designation={"Resource Head"}
           />
           <TeamMember
             img={Team7}
-            name={'Dheeraj Kotwani'}
-            designation={'Technical Head'}
+            name={"Dheeraj Kotwani"}
+            designation={"Technical Head"}
           />
           <TeamMember
             img={Team5}
             name={"Prateek"}
-            designation={'Security Head'}
+            designation={"Security Head"}
           />
           <TeamMember
             img={Team6}
-            name={'Abhay Pandey'}
-            designation={'Co-Security Head'}
+            name={"Abhay Pandey"}
+            designation={"Co-Security Head"}
           />
           <TeamMember
             img={Team2}
@@ -73,23 +87,23 @@ export default function Team() {
           />
           <TeamMember
             img={Team9}
-            name={'Ayushman Tripathi'}
-            designation={'Management Head'}
+            name={"Ayushman Tripathi"}
+            designation={"Management Head"}
           />
           <TeamMember
             img={Team4}
-            name={'Divisha'}
-            designation={'Creative Head'}
+            name={"Divisha"}
+            designation={"Creative Head"}
           />
           <TeamMember
             img={Team11}
-            name={'Devansh Agarwal'}
-            designation={'Cultural Head'}
+            name={"Devansh Agarwal"}
+            designation={"Cultural Head"}
           />
           <TeamMember
             img={Team10}
-            name={'Shashank Rathor'}
-            designation={'Marketing Head'}
+            name={"Shashank Rathor"}
+            designation={"Marketing Head"}
           />
           <TeamMember
             img={Team14}
@@ -97,14 +111,9 @@ export default function Team() {
             designation={"Photography Head"}
           />
           <TeamMember
-            img={Team12}
-            name={"Ananya Singh"}
-            designation={"Sponsorship Head"}
-          />
-          <TeamMember
-            img={Team13}
-            name={"Prince"}
-            designation={"Merchandise Head"}
+            img={Team18}
+            name={"Priyanshu Singh"}
+            designation={"Production Head"}
           />
           <TeamMember
             img={Team15}
@@ -117,14 +126,24 @@ export default function Team() {
             designation={"Finance Head"}
           />
           <TeamMember
-            img={Team18}
-            name={"Priyanshu Singh"}
-            designation={"Production Head"}
+            img={Team13}
+            name={"Prince"}
+            designation={"Merchandise Head"}
           />
           <TeamMember
             img={Team19}
             name={"Aditya"}
             designation={"Merchandise Head"}
+          />
+          <TeamMember
+            img={Team12}
+            name={"Ananya Singh"}
+            designation={"Sponsorship Head"}
+          />
+          <TeamMember
+            img={Team20}
+            name={"Arijit Singh"}
+            designation={"Sponsorship Head"}
           />
         </div>
       </div>
