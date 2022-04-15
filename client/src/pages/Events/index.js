@@ -51,13 +51,16 @@ export default function Events() {
     <div className="fullscreen default event-page">
       <div className="font-bold font-36 text-white text-center">EVENTS</div>
       <div className="my-5">
-        <Slider {...settings}>
+        {/* <Slider {...settings}>
           <EventCard src={Event1} />
           <EventCard src={Event2} />
           <EventCard src={Event3} />
           <EventCard src={Event4} />
           <EventCard src={Event5} />
-        </Slider>
+        </Slider> */}
+        <div className="font-28 font-bold d-flex justify-content-center text-center text-white mb-5">
+          <span className="under-line">Will be updated soon!</span>
+        </div>
       </div>
     </div>
   );
