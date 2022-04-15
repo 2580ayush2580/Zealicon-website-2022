@@ -25,17 +25,10 @@ class UnpaidZealIDs(admin.SimpleListFilter):
                 for payment in payments
                 if payment["amount"] == amount
             ]
-            payment_numbers = [
-                payment["contact"][-10:]
-                for payment in payments
-                if payment["amount"] == amount
-            ]
 
             for participant in queryset:
                 email = participant.email
-                contact_no = participant.contact_no
-
-                if email in payment_emails and contact_no in payment_numbers:
+                if email in payment_emails:
                     queryset = queryset.exclude(id=participant.id)
 
         return queryset
