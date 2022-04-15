@@ -70,6 +70,12 @@ class ParticipantAdmin(admin.ModelAdmin):
             list_display = ["zeal_id", "email", "fullname"]
         return list_display
 
+    def get_list_filter(self, request):
+        if request.user.is_superuser:
+            return super().get_list_filter(request)
+        else:
+            return []
+
     def generate_zeal_id(self, request, queryset):
         for participant in queryset:
             participant.generate_zeal_id()
