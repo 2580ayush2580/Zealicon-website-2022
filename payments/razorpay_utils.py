@@ -72,3 +72,17 @@ def verify_payment(callback):
         return True
     else:
         return False
+
+
+def get_all_payments():
+    payments = client.payment.all({"count": 100})["items"]
+    skip = len(payments)
+    while skip % 100 == 0:
+        this_payment_query = client.payment.all({"count": 100, "skip": skip})["items"]
+        payments += this_payment_query
+        skip += len(this_payment_query)
+
+    captured_payments = [
+        payment for payment in payments if payment["status"] == "captured"
+    ]
+    return captured_payments
