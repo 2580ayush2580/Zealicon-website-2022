@@ -12,7 +12,7 @@
 }
 .mainShowcase-heading {
   position: absolute;
-  top: 202px;
+  top: 215px;
   width: 100%;
   left: 0;
   text-align: center;
@@ -20,6 +20,8 @@
   font-style: Mixed;
   font-size: 68.56px;
   line-height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .home-lottie-animation {
   position: absolute;
@@ -48,7 +50,7 @@
   align-items: center;
   width: 100%;
   position: absolute;
-  top: 326px;
+  top: 310px;
   left: 0;
 }
 .homeNavbar {
@@ -56,8 +58,30 @@
   width: 100% !important;
   height: 128px;
   max-width: 80%;
+  margin: -50px auto auto auto;
+  z-index: 9999999999999999999 !important;
+}
+.navbarCollege {
+  position: relative;
+  width: 100% !important;
+  max-width: 80%;
   margin: auto;
   z-index: 9999999999999999999 !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px 10px 0px;
+}
+.navbarCollegeLogo {
+  height: 80px;
+  width: 80px;
+}
+.navbarCollege-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: -80px !important;
 }
 .homeNavbarItem {
   height: 100%;
@@ -67,7 +91,7 @@
   list-style: none;
 }
 .ZealiconLogo {
-  height: 160px;
+  height: 140px;
 }
 .navbar-btn {
   /* background-color: #7f3cb4 ; */
@@ -119,6 +143,7 @@
   }
   .homeNavbar {
     max-width: 100%;
+    margin: -10px auto auto auto;
   }
   .homeNavbar-sm-hidden {
     display: none;
@@ -132,17 +157,46 @@
     font-size: 16px;
   }
   .mainShowcase-button-wrapper {
-    top: 280px;
+    top: 335px;
   }
   .mainShowcase-wrapper {
     height: 880px;
   }
   .mainShowcase-heading {
-    top: 180px;
+    top: 270px;
+  }
+  .navbarCollege {
+    background: #362865 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-right: 20px;
   }
 }
-@media only screen and (max-width: 460px) {
+
+@media only screen and (max-width: 767px) {
   .mainShowcase-button-wrapper {
-    top: 300px;
+    top: 375px;
+  }
+  .mainShowcase-heading {
+    top: 310px;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .navbarCollege {
+    padding: 10px;
+    flex-direction: column-reverse;
+  }
+  .navbarCollege-text {
+    margin-right: 0px !important;
+  }
+  .mainShowcase-button-wrapper {
+    top: 415px;
+  }
+  .mainShowcase-heading {
+    top: 310px;
+  }
+  .mainShowcase-heading-welcome-color {
+    color: #452a9e;
   }
 }

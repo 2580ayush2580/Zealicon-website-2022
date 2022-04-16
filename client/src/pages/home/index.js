@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import BackgrounImage from "../../assets/image/background.gif";
 import ZealiconLogo from "../../assets/image/zealicon-logo.svg";
+import CollegeLogo from "../../assets/image/jss.png";
 import { Link } from "react-router-dom";
 import Lottie from "react-lottie";
 import animationData from "./bg.json";
@@ -18,6 +19,21 @@ const Home = () => {
   };
   return (
     <div id="home" className="mainShowcase-wrapper">
+      <div className="navbarCollege-wrapper">
+        <div className="navbar-text navbarCollege">
+          <div></div>
+          <div className="navbarCollege-text">
+            <div className=" font-18 font-demi">JSS Mahavidyapeetha</div>
+            <div className="font-18 font-bold">
+              JSS Academy of Technical Education
+            </div>
+            <div className="font-demi font-16">C-20/1, Sector-62, Noida</div>
+          </div>
+          <div>
+            <img className="navbarCollegeLogo" src={CollegeLogo} alt="JSS" />
+          </div>
+        </div>
+      </div>
       <div className="homeNavbar">
         <Navbar
           className="navbar-bg navbar-dark custom-navbar"
