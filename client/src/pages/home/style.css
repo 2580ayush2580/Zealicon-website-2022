@@ -58,7 +58,7 @@
   width: 100% !important;
   height: 128px;
   max-width: 80%;
-  margin: -50px auto auto auto;
+  margin: -15px auto auto auto;
   z-index: 9999999999999999999 !important;
 }
 .navbarCollege {
@@ -81,7 +81,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: -80px !important;
+  margin-left: -80px !important;
 }
 .homeNavbarItem {
   height: 100%;
@@ -171,6 +171,9 @@
     max-width: 100% !important;
     padding-right: 20px;
   }
+  .navbarCollegeLogo {
+   margin-left: 70%;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -188,7 +191,7 @@
     flex-direction: column-reverse;
   }
   .navbarCollege-text {
-    margin-right: 0px !important;
+    margin-left: 0px !important;
   }
   .mainShowcase-button-wrapper {
     top: 415px;
@@ -199,4 +202,7 @@
   .mainShowcase-heading-welcome-color {
     color: #452a9e;
   }
+  .navbarCollegeLogo {
+    margin-left: 0%;
+   }
 }
