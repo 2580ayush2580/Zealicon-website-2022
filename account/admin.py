@@ -54,7 +54,7 @@ class ParticipantAdmin(admin.ModelAdmin):
     ]
     actions = ["generate_zeal_id"]
     readonly_fields = ["zeal_id"]
-    list_filter = [UnpaidZealIDs]
+    list_filter = [UnpaidZealIDs, "coupon_collected"]
 
     def get_readonly_fields(self, request, obj):
         readonly_fields = []
