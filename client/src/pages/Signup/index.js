@@ -187,8 +187,8 @@ export default function Signup() {
     <div className="nav-fullscreen d-flex justify-content-center align-items-center text-white font-48">
       <div className="form-bg">
         <div className="font-regular font-16 text-white">Welcome</div>
-        <div className="font-bold font-30 text-white">Register now</div>
-        <form onSubmit={handleSubmit}>
+        <div className="font-bold font-30 text-white">Registrations are closed!</div>
+        {/* <form onSubmit={handleSubmit}>
           <div className="d-flex flex-column">
             <div className="font-regular font-16 text-labelColor mt-4">
               Full name
@@ -256,7 +256,7 @@ export default function Signup() {
                 value="REGISTER NOW"
               />
             </div>
-          </form>
+          </form> */}
         </div>
       </div>
     </div>
